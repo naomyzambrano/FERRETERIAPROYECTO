@@ -63,9 +63,149 @@ namespace FERRETERIAPROYECTO.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1486504339_chart_graph_pie_chart_revenue_growth_81319 {
+            get {
+                object obj = ResourceManager.GetObject("1486504339-chart-graph-pie-chart-revenue-growth_81319", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1486504348_business_coins_finance_banking_bank_marketing_81341 {
+            get {
+                object obj = ResourceManager.GetObject("1486504348-business-coins-finance-banking-bank-marketing_81341", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1490129349_rounded05_82190 {
+            get {
+                object obj = ResourceManager.GetObject("1490129349-rounded05_82190", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1491254081_19document_list_82931 {
+            get {
+                object obj = ResourceManager.GetObject("1491254081-19document-list_82931", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1496969506_a_digital_survey_84686 {
+            get {
+                object obj = ResourceManager.GetObject("1496969506-a-digital-survey_84686", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1904677_add_addition_calculate_charge_create_new_plus_122527 {
+            get {
+                object obj = ResourceManager.GetObject("1904677-add-addition-calculate-charge-create-new-plus_122527", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1904677_add_addition_calculate_charge_create_new_plus_1225271 {
+            get {
+                object obj = ResourceManager.GetObject("1904677-add-addition-calculate-charge-create-new-plus_1225271", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _4137140_building_construction_industry_setting_114075 {
             get {
                 object obj = ResourceManager.GetObject("4137140-building-construction-industry-setting_114075", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _4137140_building_construction_industry_setting_1140751 {
+            get {
+                object obj = ResourceManager.GetObject("4137140-building-construction-industry-setting_1140751", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap account_user_avatar_worker_profile_job_employee_icon_261707 {
+            get {
+                object obj = ResourceManager.GetObject("account_user_avatar_worker_profile_job_employee_icon_261707", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap accounting_calculator_calculation_calculate_office_icon_191148 {
+            get {
+                object obj = ResourceManager.GetObject("accounting_calculator_calculation_calculate_office_icon_191148", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap business_application_addmale_useradd_insert_add_user_client_2312 {
+            get {
+                object obj = ResourceManager.GetObject("business_application_addmale_useradd_insert_add_user_client_2312", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap offer_discount_sales_add_cart_icon_228001 {
+            get {
+                object obj = ResourceManager.GetObject("offer_discount_sales_add_cart_icon_228001", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap shopping_cart_add_button_icon_icons_com_56132 {
+            get {
+                object obj = ResourceManager.GetObject("shopping-cart-add-button_icon-icons.com_56132", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap signout_106525 {
+            get {
+                object obj = ResourceManager.GetObject("signout_106525", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

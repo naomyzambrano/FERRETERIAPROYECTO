@@ -54,5 +54,10 @@ namespace FERRETERIAPROYECTO
         {
 
         }
+
+        private void BTNAGREGARVENTA_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

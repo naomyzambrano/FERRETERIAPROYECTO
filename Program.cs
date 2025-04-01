@@ -16,7 +16,7 @@ namespace FERRETERIAPROYECTO
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new VENTAS());
+            Application.Run(new Form1());
         }
     }
 }

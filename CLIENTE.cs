@@ -32,21 +32,47 @@ namespace FERRETERIAPROYECTO
 
         private void BTNAGREGARC_Click(object sender, EventArgs e)
         {
-            idempleado++;
-            TXTIDCLIENTE.Text = idempleado.ToString();
+            if (!string.IsNullOrEmpty(TXTNOMBREC.Text) &&
+                !string.IsNullOrEmpty(TXTAPELLIDOC.Text) &&
+                !string.IsNullOrEmpty(TXTDNIC.Text) &&
+                !string.IsNullOrEmpty(TXTTELEFONOC.Text) &&
+                !string.IsNullOrEmpty(TXTESTADOC.Text) &&
+                !string.IsNullOrEmpty(TXTDIRECCIONC.Text) &&
+                !string.IsNullOrEmpty(TXTSALDOPC.Text))
+            {
+                // Incrementar el idcliente
+                idempleado++; // Suponiendo que lo estás reutilizando como contador
+                TXTIDCLIENTE.Text = idempleado.ToString();
 
-            string nombre = TXTNOMBREC.Text;
-            string apellido = TXTAPELLIDOC.Text;
-            string dni = TXTDNIC.Text;
-            int telefono = int.Parse(TXTTELEFONOC.Text);
-            string estado = TXTESTADOC.Text;
-            string direccion = TXTDIRECCIONC.Text;
-            decimal saldo = decimal.TryParse(TXTSALDOPC.Text, out decimal result) ? result : 0.00m;
+                // Obtener valores de los controles
+                string nombre = TXTNOMBREC.Text;
+                string apellido = TXTAPELLIDOC.Text;
+                string dni = TXTDNIC.Text;
+                int telefono = int.Parse(TXTTELEFONOC.Text);
+                string estado = TXTESTADOC.Text;
+                string direccion = TXTDIRECCIONC.Text;
+                decimal saldo = decimal.TryParse(TXTSALDOPC.Text, out decimal result) ? result : 0.00m;
+                DateTime fecha = DTPFECHAC.Value;
 
+                // Agregar cliente y mostrar en el DataGridView
+                datos.agregarcliente(nombre, apellido, dni, telefono, estado, direccion, saldo, fecha);
+                datos.mostrarclientes(DGVCLIENTE);
 
-            DateTime fecha = DTPFECHAC.Value;
-            datos.agregarcliente(nombre, apellido, dni, telefono, estado, direccion,saldo, fecha);
-            datos.mostrarclientes(DGVCLIENTE);
+                // Limpiar campos
+                TXTNOMBREC.Clear();
+                TXTAPELLIDOC.Clear();
+                TXTDNIC.Clear();
+                TXTTELEFONOC.Clear();
+                TXTESTADOC.Clear();
+                TXTDIRECCIONC.Clear();
+                TXTSALDOPC.Clear();
+                DTPFECHAC.Value = DateTime.Now;
+            }
+            else
+            {
+                MessageBox.Show("Por favor, complete todos los campos del cliente.");
+            }
+
 
 
         }

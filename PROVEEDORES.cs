@@ -29,16 +29,31 @@ namespace FERRETERIAPROYECTO
 
         private void BTNAGREGARPROVE_Click(object sender, EventArgs e)
         {
-           
+            if (!string.IsNullOrEmpty(TXTNOMBREPROVE.Text) &&
+                !string.IsNullOrEmpty(TXTTELEFONOPROVE.Text))
+            {
+                // Incrementar el id del proveedor
+                idprov++;
+                TXTIDPROVEEDOR.Text = idprov.ToString();
 
-            idprov++;
-            TXTIDPROVEEDOR.Text = idprov.ToString();
+                // Obtener los valores de los TextBox
+                string nombre = TXTNOMBREPROVE.Text;
+                int telefono = int.Parse(TXTTELEFONOPROVE.Text);
 
-            string nombre = TXTNOMBREPROVE.Text;
-            int telefono = int.Parse(TXTTELEFONOPROVE.Text);
+                // Insertar proveedor y actualizar tabla
+                datos.insertarprovedor(nombre, telefono);
+                datos.mostrarproveedor(DGVPROVEEDORES);
 
-            datos.insertarprovedor(nombre,telefono);
-            datos.mostrarproveedor(DGVPROVEEDORES);
+                // Limpiar campos
+                TXTNOMBREPROVE.Clear();
+                TXTTELEFONOPROVE.Clear();
+            }
+            else
+            {
+                // Mostrar advertencia
+                MessageBox.Show("Por favor, complete todos los campos del proveedor.");
+            }
+
         }
 
         private void PROVEEDORES_Load(object sender, EventArgs e)
