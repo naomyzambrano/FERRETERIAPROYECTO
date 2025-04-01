@@ -167,6 +167,18 @@
       <DependentUpon>CLIENTE.cs</DependentUpon>
     </Compile>
     <Compile Include="CONEXIONBD.cs" />
+    <Compile Include="DETALLE_VENTA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DETALLE_VENTA.Designer.cs">
+      <DependentUpon>DETALLE_VENTA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EGRESOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EGRESOS.Designer.cs">
+      <DependentUpon>EGRESOS.cs</DependentUpon>
+    </Compile>
     <Compile Include="EMPLEADO.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +190,12 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PLANILLA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PLANILLA.Designer.cs">
+      <DependentUpon>PLANILLA.cs</DependentUpon>
     </Compile>
     <Compile Include="PRODUCTO.cs">
       <SubType>Form</SubType>
@@ -203,11 +221,20 @@
     <EmbeddedResource Include="CLIENTE.resx">
       <DependentUpon>CLIENTE.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DETALLE_VENTA.resx">
+      <DependentUpon>DETALLE_VENTA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EGRESOS.resx">
+      <DependentUpon>EGRESOS.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EMPLEADO.resx">
       <DependentUpon>EMPLEADO.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PLANILLA.resx">
+      <DependentUpon>PLANILLA.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PRODUCTO.resx">
       <DependentUpon>PRODUCTO.cs</DependentUpon>

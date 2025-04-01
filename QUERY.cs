@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -447,10 +448,23 @@ namespace FERRETERIAPROYECTO
 
         }
 
-        public void agregarventa(DateTime fecha, int fkidcliente, int fkidempleado, int fkidmetodo, bool credito, float subtotal, float descuento, float isv, float total)
+        public DataTable obtenermetodo()
         {
+            //string consulta = "SELECT DISTINCT nombrecate FROM categoria";
+            string consulta = "SELECT idmetodo, nombremetodo FROM metodopago";
+            SqlDataAdapter adapter = new SqlDataAdapter(consulta, cxn.cn);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            return dt;
+        }
+
+        public int agregarventa(DateTime fecha, int fkidcliente, int fkidempleado, int fkidmetodo, bool credito, float subtotal, float descuento, float isv, float total)
+        {
+            int idventa = 0;
             try
             {
+                
+
 
                 cxn.Abrir();
                 string query = "insert into venta (fecha,fkidcliente,fkidempleado,fkidmetodo,escredito,subtotal,descuento,total,isv) VALUES(@fecha,@fkidcliente,@fkidempleado,@fkidmetodo,@escredito,@subtotal,@descuento,@total,@isv)";
@@ -465,6 +479,8 @@ namespace FERRETERIAPROYECTO
                 cmd.Parameters.AddWithValue("@total", total);
                 cmd.Parameters.AddWithValue("@isv", isv);
 
+                idventa = Convert.ToInt32(cmd.ExecuteScalar()); // OUTPUT INSERTED.idventa devuelve el id generado
+
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("VENTA REGISTRADA.");
             }
@@ -473,16 +489,41 @@ namespace FERRETERIAPROYECTO
                 MessageBox.Show("ERROR AL REGISTRAR LA VENTA: " + ex.ToString());
             }
 
+            return idventa;
         }
 
-        public void agregardetalleventa(DateTime fecha, int fkidcliente, int fkidempleado, int fkidmetodo, bool credito, float subtotal, float descuento, float isv, float total)
+        public void agregardetalleventa( int idventa, int fkidproducto, int cantidad, float subtotal, float preciouni)
         {
             try
             {
 
                 cxn.Abrir();
-                string query = "insert into venta (fecha,fkidcliente,fkidempleado,fkidmetodo,escredito,subtotal,descuento,total,isv) VALUES(@fecha,@fkidcliente,@fkidempleado,@fkidmetodo,@escredito,@subtotal,@descuento,@total,@isv)";
+                string query = "insert into detalleventa (fkidventa,fkidproducto,cantidad,subtotal,preciouni) VALUES(@fkidventa,@fkidproducto,@cantidad,@subtotal,@preciouni)";
                 SqlCommand cmd = new SqlCommand(query, cxn.cn);
+                cmd.Parameters.AddWithValue("@fkidventa", idventa);
+                cmd.Parameters.AddWithValue("@fkidproducto", fkidproducto);
+                cmd.Parameters.AddWithValue("@cantidad", cantidad);
+                cmd.Parameters.AddWithValue("@subtotal", subtotal);
+                cmd.Parameters.AddWithValue("@preciouni", preciouni);
+                cmd.ExecuteNonQuery();
+               // MessageBox.Show("VENTA REGISTRADA.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR AL REGISTRAR LA VENTA: " + ex.ToString());
+            }
+
+        }
+
+        public void eliminarventa(int id,DateTime fecha, int fkidcliente, int fkidempleado, int fkidmetodo, bool credito, float subtotal, float descuento, float isv, float total)
+        {
+            try
+            {
+
+                cxn.Abrir();
+                string query = "delete from venta  where idventa =@idventa AND fecha = @fecha AND fkidcliente = @fkidcliente AND fkidempleado = @fkidempleado AND fkidmetodo = @fkidmetodo AND escredito =@escredito AND subtotal = @subtotal AND descuento =@descuento AND total= @total AND isv= @isv";
+                SqlCommand cmd = new SqlCommand(query, cxn.cn);
+                cmd.Parameters.AddWithValue("@idventa", id);
                 cmd.Parameters.AddWithValue("@fecha", fecha);
                 cmd.Parameters.AddWithValue("@fkidcliente", fkidcliente);
                 cmd.Parameters.AddWithValue("@fkidempleado", fkidempleado);
@@ -494,14 +535,241 @@ namespace FERRETERIAPROYECTO
                 cmd.Parameters.AddWithValue("@isv", isv);
 
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("VENTA REGISTRADA.");
+                MessageBox.Show("VENTA ELIMINADA.");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("ERROR AL REGISTRAR LA VENTA: " + ex.ToString());
+                MessageBox.Show("ERROR AL ELIMINAR LA VENTA: " + ex.ToString());
             }
 
         }
+
+        public void mostrarventa(DataGridView dgv)
+        {
+            try
+            {
+                SqlDataAdapter adaptador = new SqlDataAdapter("select * from venta", cxn.cn);
+                DataTable dt = new DataTable();
+                adaptador.Fill(dt);
+                dgv.DataSource = dt;
+            }
+
+
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("NO SE LOGRO LLENAR LA TABLA", ex.Message);
+
+
+
+            }
+        }
+
+        public void actualizarventa(int id,DateTime fecha, int fkidcliente, int fkidempleado, int fkidmetodo, bool credito, float subtotal, float descuento, float isv, float total)
+        {
+            try
+            {
+                
+
+                cxn.Abrir();
+                string query = "update venta set  fkidcliente = @fkidcliente , fkidempleado = @fkidempleado , fkidmetodo = @fkidmetodo , escredito =@escredito, subtotal = @subtotal , descuento =@descuento , total= @total , isv= @isv where fecha = @fecha";
+                SqlCommand cmd = new SqlCommand(query, cxn.cn);
+                cmd.Parameters.AddWithValue("@idventa", id);
+                cmd.Parameters.AddWithValue("@fecha", fecha);
+                cmd.Parameters.AddWithValue("@fkidcliente", fkidcliente);
+                cmd.Parameters.AddWithValue("@fkidempleado", fkidempleado);
+                cmd.Parameters.AddWithValue("@fkidmetodo", fkidmetodo);
+                cmd.Parameters.AddWithValue("@escredito", credito);
+                cmd.Parameters.AddWithValue("@subtotal", subtotal);
+                cmd.Parameters.AddWithValue("@descuento", descuento);
+                cmd.Parameters.AddWithValue("@total", total);
+                cmd.Parameters.AddWithValue("@isv", isv);
+
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("VENTA ACTUALIZADA.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR AL ACTUALIZAR LA VENTA: " + ex.ToString());
+            }
+
+        }
+
+        
+
+        public DataTable obtenertipogasto()
+        {
+            //string consulta = "SELECT DISTINCT nombrecate FROM categoria";
+            string consulta = "SELECT idtipogasto, nombre FROM tipogasto";
+            SqlDataAdapter adapter = new SqlDataAdapter(consulta, cxn.cn);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            return dt;
+        }
+
+
+        public void agregaregreso(string descripcion, int monto, DateTime fecha, int fkidtipogasto)
+        {
+            try
+            {
+
+                cxn.Abrir();
+                string query = "insert into egresos (descripcion,monto,fecha,fkidtipogasto) VALUES(@descripcion,@monto,@fecha,@fkidtipogasto)";
+                SqlCommand cmd = new SqlCommand(query, cxn.cn);
+                cmd.Parameters.AddWithValue("@descripcion", descripcion);
+                cmd.Parameters.AddWithValue("@monto", monto);
+                cmd.Parameters.AddWithValue("@fecha", fecha);
+                cmd.Parameters.AddWithValue("@fkidtipogasto", fkidtipogasto);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("EGRESO REGISTRADO.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR AL REGSITRAR EL EGRESO: " + ex.ToString());
+            }
+
+        }
+
+        public void mostraregreso(DataGridView dgv)
+        {
+            try
+            {
+                SqlDataAdapter adaptador = new SqlDataAdapter("select * from egresos", cxn.cn);
+                DataTable dt = new DataTable();
+                adaptador.Fill(dt);
+                dgv.DataSource = dt;
+            }
+
+
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("NO SE LOGRO LLENAR LA TABLA", ex.Message);
+
+
+
+            }
+        }
+
+        public void eliminaregreso(int id,string descripcion, int monto, DateTime fecha, int fkidtipogasto)
+        {
+            try
+            {
+
+                cxn.Abrir();
+                string query = "delete from egresos where idegreso =@idegreso AND descripcion=@descripcion AND monto=@monto AND fecha =@fecha AND fkidtipogasto=@fkidtipogasto";
+                SqlCommand cmd = new SqlCommand(query, cxn.cn);
+                cmd.Parameters.AddWithValue("@idegreso", id);
+                cmd.Parameters.AddWithValue("@descripcion", descripcion);
+                cmd.Parameters.AddWithValue("@monto", monto);
+                cmd.Parameters.AddWithValue("@fecha", fecha);
+                cmd.Parameters.AddWithValue("@fkidtipogasto", fkidtipogasto);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("EGRESO ELIMINADO.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR AL ELIMINAR EL EGRESO: " + ex.ToString());
+            }
+
+        }
+
+        public void actualizaregreso(int id, string descripcion, int monto, DateTime fecha, int fkidtipogasto)
+        {
+            try
+            {
+
+                cxn.Abrir();
+                string query = "update egresos  set descripcion=@descripcion , monto=@monto ,fecha =@fecha ,fkidtipogasto=@fkidtipogasto where idegreso =@idegreso";
+                SqlCommand cmd = new SqlCommand(query, cxn.cn);
+                cmd.Parameters.AddWithValue("@idegreso", id);
+                cmd.Parameters.AddWithValue("@descripcion", descripcion);
+                cmd.Parameters.AddWithValue("@monto", monto);
+                cmd.Parameters.AddWithValue("@fecha", fecha);
+                cmd.Parameters.AddWithValue("@fkidtipogasto", fkidtipogasto);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("EGRESO ACTUALIZADO.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR AL ACTUALIZAR EL EGRESO: " + ex.ToString());
+            }
+
+        }
+
+        public DataTable obteneridclientes()
+        {
+            
+            string consulta = "SELECT idcliente, CONCAT(nombrec, ' ', apellidoc) AS nombrecompleto FROM cliente";
+            SqlDataAdapter adapter = new SqlDataAdapter(consulta, cxn.cn);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            return dt;
+        }
+
+        public DataTable obtenerproducto()
+        {
+            string consulta = "SELECT idproducto, nombrep, preciov FROM producto";
+            SqlDataAdapter adapter = new SqlDataAdapter(consulta, cxn.cn);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            return dt;
+        }
+
+        public DataTable obteneridempleado()
+        {
+
+            string consulta = "SELECT idempleado, CONCAT(nombree, ' ', apellidoe) AS nombrecompletoe FROM empleado";
+            SqlDataAdapter adapter = new SqlDataAdapter(consulta, cxn.cn);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            return dt;
+        }
+
+        public void registrarplanilla( int fkidempleado, DateTime fechainicio, DateTime fechafin, float montopago)
+        {
+            try
+            {
+
+                cxn.Abrir();
+                string query = "insert into planilla (fkidempleado,fechainicio,fechafin,montopago) values (@fkidempleado,@fechainicio,@fechafin,@montopago)";
+                SqlCommand cmd = new SqlCommand(query, cxn.cn);
+                cmd.Parameters.AddWithValue("@fkidempleado", fkidempleado);
+                cmd.Parameters.AddWithValue("@fechainicio", fechainicio);
+                cmd.Parameters.AddWithValue("@fechafin", fechafin);
+                cmd.Parameters.AddWithValue("@montopago", montopago);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("PLANILLA REGISTRADA.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR AL REGISTRAR LA PLANILLA: " + ex.ToString());
+            }
+
+        }
+
+        public void mostrarplanilla(DataGridView dgv)
+        {
+            try
+            {
+                SqlDataAdapter adaptador = new SqlDataAdapter("select * from planilla", cxn.cn);
+                DataTable dt = new DataTable();
+                adaptador.Fill(dt);
+                dgv.DataSource = dt;
+            }
+
+
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("NO SE LOGRO LLENAR LA TABLA", ex.Message);
+
+
+
+            }
+        }
+
+
     }
 
 
