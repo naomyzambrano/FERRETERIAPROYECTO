@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlTypes;
+using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -33,7 +36,7 @@ namespace FERRETERIAPROYECTO
                 cmd.Parameters.AddWithValue("@fechae", fecha);
 
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("EMPLEADO AGREGADO.");
+                MessageBox.Show("EMPLEADO AGREGADO CORRECTAMENTE");
             }
             catch (Exception ex)
             {
@@ -502,6 +505,41 @@ namespace FERRETERIAPROYECTO
             }
 
         }
+
+        public string ObtenerTipoUsuario(string username, string password)
+        {
+            string tipoUsuario = null;
+
+            try
+            {
+                // Abre la conexión a la base de datos
+                cxn.Abrir();
+
+                // Consulta SQL para obtener el tipo de usuario
+                string query = "SELECT cargo FROM empleado WHERE dnie = @dnie AND contraseña = @contraseña";
+                SqlCommand cmd = new SqlCommand(query, cxn.cn);
+                cmd.Parameters.AddWithValue("@dnie", username);
+                cmd.Parameters.AddWithValue("@contraseña", password);
+
+                // Ejecuta la consulta y obtiene el resultado
+                object result = cmd.ExecuteScalar();
+                tipoUsuario = result != null ? result.ToString() : null;
+                /*result != null: Verifica si result no es null.
+                result.ToString(): Si result no es null, convierte el valor a string usando el método ToString().
+                : null: Si result es null, asigna null a tipoUsuario.*/
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al obtener tipo de usuario: " + ex.Message);
+            }
+            
+
+            return tipoUsuario;
+        }
+
+
+
+
     }
 
 

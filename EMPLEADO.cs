@@ -29,22 +29,49 @@ namespace FERRETERIAPROYECTO
         }
 
         private void BTNAGREGARE_Click(object sender, EventArgs e)
-        {
-            idempleado++;
-            TXTIDEMPLEADO.Text = idempleado.ToString();
+        {         
+            if (!string.IsNullOrEmpty(TXTNOMBREE.Text) &&
+                !string.IsNullOrEmpty(TXTAPELLIDOE.Text) &&
+                !string.IsNullOrEmpty(TXTDNIE.Text) &&
+                !string.IsNullOrEmpty(TXTCONTRAE.Text) &&
+                !string.IsNullOrEmpty(TXTTELEFONOE.Text) &&
+                !string.IsNullOrEmpty(TXTSUELDOE.Text) &&
+                !string.IsNullOrEmpty(cmbcargo.Text))
+            {
+                // Incrementar el idempleado
+                idempleado++;
+                TXTIDEMPLEADO.Text = idempleado.ToString();
 
-            string nombre = TXTNOMBREE.Text;
-            string apellido = TXTAPELLIDOE.Text;
-            string dni = TXTDNIE.Text;
-            //int dni = int.Parse(TXTDNIE.Text);  //CAMBIAR A STRING 
-            string contraseña = TXTCONTRAE.Text;
-            int telefono = int.Parse(TXTTELEFONOE.Text);
-            float sueldo = float.Parse(TXTSUELDOE.Text);
-            string cargo = TXTCARGOE.Text;
+                // Obtener los valores de los TextBox
+                string nombre = TXTNOMBREE.Text;
+                string apellido = TXTAPELLIDOE.Text;
+                string dni = TXTDNIE.Text;
+                string contraseña = TXTCONTRAE.Text;
+                int telefono = int.Parse(TXTTELEFONOE.Text);
+                float sueldo = float.Parse(TXTSUELDOE.Text);
+                string cargo = cmbcargo.Text;
+                DateTime fecha = DTPFECHAE.Value;
 
-            DateTime fecha = DTPFECHAE.Value;
-            datos.agregarempleado(nombre,apellido,dni,contraseña,telefono,sueldo,cargo,fecha);
-            datos.mostrarempleados(DGVEMPLEADO);
+                // Agregar los datos al sistema
+                datos.agregarempleado(nombre, apellido, dni, contraseña, telefono, sueldo, cargo, fecha);
+                datos.mostrarempleados(DGVEMPLEADO);
+
+                // Limpiar los TextBox después de agregar los datos
+                TXTNOMBREE.Clear();
+                TXTAPELLIDOE.Clear();
+                TXTDNIE.Clear();
+                TXTCONTRAE.Clear();
+                TXTTELEFONOE.Clear();
+                TXTSUELDOE.Clear();
+                DTPFECHAE.Value = DateTime.Now; // Opcional: Resetear la fecha actual del DateTimePicker
+
+            }
+            else
+            {
+                // Si algún campo está vacío, mostrar un mensaje de advertencia
+                MessageBox.Show("Por favor, complete todos los campos.");
+            }
+
         }
 
         private void BTNELIMINARE_Click(object sender, EventArgs e)
@@ -71,7 +98,7 @@ namespace FERRETERIAPROYECTO
             {
                 if (!string.IsNullOrEmpty(nombre) && !string.IsNullOrEmpty(apellido))
                 {
-                    datos.eliminarempleado(id, TXTNOMBREE.Text, TXTAPELLIDOE.Text, TXTDNIE.Text, TXTCONTRAE.Text,telefono,sueldo,TXTCARGOE.Text, DTPFECHAE.Value);
+                    datos.eliminarempleado(id, TXTNOMBREE.Text, TXTAPELLIDOE.Text, TXTDNIE.Text, TXTCONTRAE.Text,telefono,sueldo, cmbcargo.Text, DTPFECHAE.Value);
 
                     datos.mostrarempleados(DGVEMPLEADO);
                 }
@@ -94,7 +121,7 @@ namespace FERRETERIAPROYECTO
             TXTCONTRAE.Text = DGVEMPLEADO.CurrentRow.Cells[4].Value.ToString();
             TXTTELEFONOE.Text = DGVEMPLEADO.CurrentRow.Cells[5].Value.ToString();
             TXTSUELDOE.Text = DGVEMPLEADO.CurrentRow.Cells[6].Value.ToString();
-            TXTCARGOE.Text = DGVEMPLEADO.CurrentRow.Cells[7].Value.ToString();
+            cmbcargo.Text = DGVEMPLEADO.CurrentRow.Cells[7].Value.ToString();
             DTPFECHAE.Text = DGVEMPLEADO.CurrentRow.Cells[8].Value.ToString();
         }
 
@@ -113,11 +140,16 @@ namespace FERRETERIAPROYECTO
             contraseña = TXTCONTRAE.Text;
             telefono = Convert.ToInt32(TXTTELEFONOE.Text); 
             sueldo = Convert.ToSingle(TXTSUELDOE.Text);  
-            cargo = TXTCARGOE.Text;
+            cargo = cmbcargo.Text;
             fecha = DTPFECHAE.Value;
 
             datos.actualizarempleado(id, nombre, apellido, dni, contraseña, telefono, sueldo, cargo, fecha);
             datos.mostrarempleados(DGVEMPLEADO);
+        }
+
+        private void GBEMP_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -73,20 +73,46 @@ namespace FERRETERIAPROYECTO
 
         private void BTNAGREGARPRODU_Click(object sender, EventArgs e)
         {
-            idprod++;
-            TXTIDPRODUCTO.Text = idprod.ToString();
+            if (!string.IsNullOrEmpty(TXTNOMBREPRODU.Text) &&
+                !string.IsNullOrEmpty(TXTSTOCK.Text) &&
+                !string.IsNullOrEmpty(TXTDESCRIPCIONPRODU.Text) &&
+                CMBCATEGORIAPRODU.SelectedItem != null &&
+                CMBPROVE.SelectedItem != null &&
+                !string.IsNullOrEmpty(TXTPRECIOCOMPRA.Text) &&
+                !string.IsNullOrEmpty(TXTPRECIOVENTA.Text))
+            {
+                // Incrementar el idprod
+                idprod++;
+                TXTIDPRODUCTO.Text = idprod.ToString();
 
+                // Obtener los valores de los controles
+                string nombre = TXTNOMBREPRODU.Text;
+                int stock = Convert.ToInt32(TXTSTOCK.Text);
+                string descripcion = TXTDESCRIPCIONPRODU.Text;
+                int fkidcategoria = Convert.ToInt32(CMBCATEGORIAPRODU.SelectedValue);
+                int fkidproveedor = Convert.ToInt32(CMBPROVE.SelectedValue);
+                float precioc = Convert.ToSingle(TXTPRECIOCOMPRA.Text);
+                float preciov = Convert.ToSingle(TXTPRECIOVENTA.Text);
 
-            string nombre = TXTNOMBREPRODU.Text; 
-            int stock = Convert.ToInt32(TXTSTOCK.Text); 
-            string descripcion = TXTDESCRIPCIONPRODU.Text; 
-            int fkidcategoria = Convert.ToInt32(CMBCATEGORIAPRODU.SelectedValue); // ID de la categoría seleccionada
-            int fkidproveedor = Convert.ToInt32(CMBPROVE.SelectedValue); // ID del proveedor seleccionado
-            float precioc = Convert.ToSingle(TXTPRECIOCOMPRA.Text);
-            float preciov = Convert.ToSingle(TXTPRECIOVENTA.Text);
+                // Agregar el producto
+                datos.agregarproducto(nombre, stock, descripcion, fkidcategoria, fkidproveedor, precioc, preciov);
+                datos.mostrarproducto(DGVPRODUCTO);
 
-            datos.agregarproducto(nombre, stock, descripcion, fkidcategoria, fkidproveedor, precioc, preciov);
-            datos.mostrarproducto(DGVPRODUCTO);
+                // Limpiar los campos después de agregar
+                TXTNOMBREPRODU.Clear();
+                TXTSTOCK.Clear();
+                TXTDESCRIPCIONPRODU.Clear();
+                TXTPRECIOCOMPRA.Clear();
+                TXTPRECIOVENTA.Clear();
+                CMBCATEGORIAPRODU.SelectedIndex = -1;
+                CMBPROVE.SelectedIndex = -1;
+            }
+            else
+            {
+                // Mostrar mensaje si hay campos vacíos
+                MessageBox.Show("Por favor, complete todos los campos del producto.");
+            }
+
         }
 
         private void BTNELIMINARPRODU_Click(object sender, EventArgs e)

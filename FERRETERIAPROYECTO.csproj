@@ -179,6 +179,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="MENU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MENU.Designer.cs">
+      <DependentUpon>MENU.cs</DependentUpon>
+    </Compile>
     <Compile Include="PRODUCTO.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +206,12 @@
     <Compile Include="VENTAS.Designer.cs">
       <DependentUpon>VENTAS.cs</DependentUpon>
     </Compile>
+    <Compile Include="VER_TABLAS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VER_TABLAS.Designer.cs">
+      <DependentUpon>VER_TABLAS.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CLIENTE.resx">
       <DependentUpon>CLIENTE.cs</DependentUpon>
     </EmbeddedResource>
@@ -208,6 +220,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MENU.resx">
+      <DependentUpon>MENU.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PRODUCTO.resx">
       <DependentUpon>PRODUCTO.cs</DependentUpon>
@@ -228,6 +243,9 @@
     <EmbeddedResource Include="VENTAS.resx">
       <DependentUpon>VENTAS.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VER_TABLAS.resx">
+      <DependentUpon>VER_TABLAS.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -244,6 +262,29 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\4137140-building-construction-industry-setting_114075.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="IMAGENES\1486504339-chart-graph-pie-chart-revenue-growth_81319.ico" />
+    <Content Include="IMAGENES\1486504348-business-coins-finance-banking-bank-marketing_81341.ico" />
+    <Content Include="IMAGENES\1490129349-rounded05_82190.ico" />
+    <Content Include="IMAGENES\1491254081-19document-list_82931.ico" />
+    <Content Include="IMAGENES\1492790846-9cancel_84247.ico" />
+    <Content Include="IMAGENES\1496969506-a-digital-survey_84686.ico" />
+    <Content Include="IMAGENES\1904677-add-addition-calculate-charge-create-new-plus_122527.ico" />
+    <Content Include="IMAGENES\4137140-building-construction-industry-setting_114075.ico" />
+    <Content Include="IMAGENES\accounting_calculator_calculation_calculate_office_icon_191148.ico" />
+    <Content Include="IMAGENES\account_user_avatar_worker_profile_job_employee_icon_261707.ico" />
+    <Content Include="IMAGENES\box_full_products_14639.ico" />
+    <Content Include="IMAGENES\business_application_addmale_useradd_insert_add_user_client_2312.ico" />
+    <Content Include="IMAGENES\business_man_usersearch_thesearch_theclient_2356.ico" />
+    <Content Include="IMAGENES\eye-hidden-design-black-interface-symbol_icon-icons.com_54536 %281%29.ico" />
+    <Content Include="IMAGENES\offer_discount_sales_add_cart_icon_228001.ico" />
+    <Content Include="IMAGENES\preferences_product_box_setting_options_control_inventory_icon_261649.ico" />
+    <Content Include="IMAGENES\shopping-cart-add-button_icon-icons.com_56132.ico" />
+    <Content Include="IMAGENES\signout_106525.ico" />
+    <Content Include="IMAGENES\twocirclingarrows1_120592.ico" />
+    <Content Include="IMAGENES\Windows_Magnifier_26985.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Microsoft.Data.SqlClient.SNI.6.0.2\build\net462\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('packages\Microsoft.Data.SqlClient.SNI.6.0.2\build\net462\Microsoft.Data.SqlClient.SNI.targets')" />
