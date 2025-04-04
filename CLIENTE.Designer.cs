@@ -81,7 +81,7 @@
             this.GBCLIENTE.Controls.Add(this.DTPFECHAC);
             this.GBCLIENTE.Controls.Add(this.label3);
             this.GBCLIENTE.Controls.Add(this.label1);
-            this.GBCLIENTE.Location = new System.Drawing.Point(16, 29);
+            this.GBCLIENTE.Location = new System.Drawing.Point(16, 28);
             this.GBCLIENTE.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GBCLIENTE.Name = "GBCLIENTE";
             this.GBCLIENTE.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -95,15 +95,15 @@
             this.TXTDIRECCIONC.Location = new System.Drawing.Point(169, 294);
             this.TXTDIRECCIONC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TXTDIRECCIONC.Name = "TXTDIRECCIONC";
-            this.TXTDIRECCIONC.Size = new System.Drawing.Size(831, 23);
-            this.TXTDIRECCIONC.TabIndex = 22;
+            this.TXTDIRECCIONC.Size = new System.Drawing.Size(831, 26);
+            this.TXTDIRECCIONC.TabIndex = 5;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(65, 300);
+            this.label10.Location = new System.Drawing.Point(52, 297);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(86, 15);
+            this.label10.Size = new System.Drawing.Size(111, 20);
             this.label10.TabIndex = 21;
             this.label10.Text = "DIRECCION ";
             // 
@@ -112,8 +112,8 @@
             this.TXTSALDOPC.Location = new System.Drawing.Point(683, 238);
             this.TXTSALDOPC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TXTSALDOPC.Name = "TXTSALDOPC";
-            this.TXTSALDOPC.Size = new System.Drawing.Size(317, 23);
-            this.TXTSALDOPC.TabIndex = 20;
+            this.TXTSALDOPC.Size = new System.Drawing.Size(317, 26);
+            this.TXTSALDOPC.TabIndex = 9;
             // 
             // BTNAGREGARC
             // 
@@ -123,7 +123,7 @@
             this.BTNAGREGARC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BTNAGREGARC.Name = "BTNAGREGARC";
             this.BTNAGREGARC.Size = new System.Drawing.Size(157, 52);
-            this.BTNAGREGARC.TabIndex = 3;
+            this.BTNAGREGARC.TabIndex = 10;
             this.BTNAGREGARC.Text = "AGREGAR";
             this.BTNAGREGARC.UseVisualStyleBackColor = false;
             this.BTNAGREGARC.Click += new System.EventHandler(this.BTNAGREGARC_Click);
@@ -133,8 +133,8 @@
             this.TXTESTADOC.Location = new System.Drawing.Point(683, 172);
             this.TXTESTADOC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TXTESTADOC.Name = "TXTESTADOC";
-            this.TXTESTADOC.Size = new System.Drawing.Size(317, 23);
-            this.TXTESTADOC.TabIndex = 19;
+            this.TXTESTADOC.Size = new System.Drawing.Size(317, 26);
+            this.TXTESTADOC.TabIndex = 8;
             // 
             // BTNELIMINARC
             // 
@@ -144,7 +144,7 @@
             this.BTNELIMINARC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BTNELIMINARC.Name = "BTNELIMINARC";
             this.BTNELIMINARC.Size = new System.Drawing.Size(157, 52);
-            this.BTNELIMINARC.TabIndex = 2;
+            this.BTNELIMINARC.TabIndex = 11;
             this.BTNELIMINARC.Text = "ELIMINAR";
             this.BTNELIMINARC.UseVisualStyleBackColor = false;
             this.BTNELIMINARC.Click += new System.EventHandler(this.BTNELIMINARC_Click);
@@ -157,7 +157,7 @@
             this.BTNACTUALIZARC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BTNACTUALIZARC.Name = "BTNACTUALIZARC";
             this.BTNACTUALIZARC.Size = new System.Drawing.Size(157, 52);
-            this.BTNACTUALIZARC.TabIndex = 1;
+            this.BTNACTUALIZARC.TabIndex = 12;
             this.BTNACTUALIZARC.Text = "ACTUALIZAR";
             this.BTNACTUALIZARC.UseVisualStyleBackColor = false;
             this.BTNACTUALIZARC.Click += new System.EventHandler(this.BTNACTUALIZARC_Click);
@@ -167,47 +167,47 @@
             this.TXTTELEFONOC.Location = new System.Drawing.Point(683, 104);
             this.TXTTELEFONOC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TXTTELEFONOC.Name = "TXTTELEFONOC";
-            this.TXTTELEFONOC.Size = new System.Drawing.Size(317, 23);
-            this.TXTTELEFONOC.TabIndex = 18;
+            this.TXTTELEFONOC.Size = new System.Drawing.Size(317, 26);
+            this.TXTTELEFONOC.TabIndex = 7;
             // 
             // TXTDNIC
             // 
             this.TXTDNIC.Location = new System.Drawing.Point(169, 232);
             this.TXTDNIC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TXTDNIC.Name = "TXTDNIC";
-            this.TXTDNIC.Size = new System.Drawing.Size(317, 23);
-            this.TXTDNIC.TabIndex = 17;
+            this.TXTDNIC.Size = new System.Drawing.Size(317, 26);
+            this.TXTDNIC.TabIndex = 4;
             // 
             // TXTAPELLIDOC
             // 
             this.TXTAPELLIDOC.Location = new System.Drawing.Point(169, 172);
             this.TXTAPELLIDOC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TXTAPELLIDOC.Name = "TXTAPELLIDOC";
-            this.TXTAPELLIDOC.Size = new System.Drawing.Size(317, 23);
-            this.TXTAPELLIDOC.TabIndex = 16;
+            this.TXTAPELLIDOC.Size = new System.Drawing.Size(317, 26);
+            this.TXTAPELLIDOC.TabIndex = 3;
             // 
             // TXTNOMBREC
             // 
             this.TXTNOMBREC.Location = new System.Drawing.Point(169, 107);
             this.TXTNOMBREC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TXTNOMBREC.Name = "TXTNOMBREC";
-            this.TXTNOMBREC.Size = new System.Drawing.Size(317, 23);
-            this.TXTNOMBREC.TabIndex = 15;
+            this.TXTNOMBREC.Size = new System.Drawing.Size(317, 26);
+            this.TXTNOMBREC.TabIndex = 2;
             // 
             // TXTIDCLIENTE
             // 
             this.TXTIDCLIENTE.Location = new System.Drawing.Point(169, 50);
             this.TXTIDCLIENTE.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TXTIDCLIENTE.Name = "TXTIDCLIENTE";
-            this.TXTIDCLIENTE.Size = new System.Drawing.Size(317, 23);
-            this.TXTIDCLIENTE.TabIndex = 14;
+            this.TXTIDCLIENTE.Size = new System.Drawing.Size(317, 26);
+            this.TXTIDCLIENTE.TabIndex = 1;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(536, 242);
+            this.label9.Location = new System.Drawing.Point(506, 244);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(134, 15);
+            this.label9.Size = new System.Drawing.Size(171, 20);
             this.label9.TabIndex = 13;
             this.label9.Text = "SALDO PENDIENTE";
             // 
@@ -216,52 +216,52 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(109, 238);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(31, 15);
+            this.label8.Size = new System.Drawing.Size(40, 20);
             this.label8.TabIndex = 12;
             this.label8.Text = "DNI";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(77, 174);
+            this.label7.Location = new System.Drawing.Point(69, 178);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(74, 15);
+            this.label7.Size = new System.Drawing.Size(94, 20);
             this.label7.TabIndex = 11;
             this.label7.Text = "APELLIDO";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(617, 55);
+            this.label6.Location = new System.Drawing.Point(609, 50);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 15);
+            this.label6.Size = new System.Drawing.Size(68, 20);
             this.label6.TabIndex = 10;
             this.label6.Text = "FECHA";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(589, 113);
+            this.label5.Location = new System.Drawing.Point(576, 113);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 15);
+            this.label5.Size = new System.Drawing.Size(101, 20);
             this.label5.TabIndex = 9;
             this.label5.Text = "TELEFONO";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(605, 178);
+            this.label4.Location = new System.Drawing.Point(597, 175);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 15);
+            this.label4.Size = new System.Drawing.Size(80, 20);
             this.label4.TabIndex = 8;
             this.label4.Text = "ESTADO";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(51, 58);
+            this.label2.Location = new System.Drawing.Point(27, 56);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 15);
+            this.label2.Size = new System.Drawing.Size(126, 20);
             this.label2.TabIndex = 6;
             this.label2.Text = "ID EMPLEADO";
             // 
@@ -271,15 +271,15 @@
             this.DTPFECHAC.Location = new System.Drawing.Point(683, 47);
             this.DTPFECHAC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DTPFECHAC.Name = "DTPFECHAC";
-            this.DTPFECHAC.Size = new System.Drawing.Size(317, 23);
-            this.DTPFECHAC.TabIndex = 4;
+            this.DTPFECHAC.Size = new System.Drawing.Size(317, 26);
+            this.DTPFECHAC.TabIndex = 6;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(83, 113);
+            this.label3.Location = new System.Drawing.Point(69, 110);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 15);
+            this.label3.Size = new System.Drawing.Size(84, 20);
             this.label3.TabIndex = 7;
             this.label3.Text = "NOMBRE";
             // 
@@ -288,12 +288,13 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(-97, -5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 15);
+            this.label1.Size = new System.Drawing.Size(60, 20);
             this.label1.TabIndex = 5;
             this.label1.Text = "label1";
             // 
             // DGVCLIENTE
             // 
+            this.DGVCLIENTE.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGVCLIENTE.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVCLIENTE.Location = new System.Drawing.Point(16, 487);
             this.DGVCLIENTE.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -301,12 +302,12 @@
             this.DGVCLIENTE.RowHeadersWidth = 51;
             this.DGVCLIENTE.RowTemplate.Height = 24;
             this.DGVCLIENTE.Size = new System.Drawing.Size(1051, 141);
-            this.DGVCLIENTE.TabIndex = 10;
+            this.DGVCLIENTE.TabIndex = 13;
             this.DGVCLIENTE.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVCLIENTE_CellClick);
             // 
             // CLIENTE
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Moccasin;
             this.ClientSize = new System.Drawing.Size(1098, 661);

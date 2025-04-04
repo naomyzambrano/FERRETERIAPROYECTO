@@ -167,6 +167,12 @@
       <DependentUpon>CLIENTE.cs</DependentUpon>
     </Compile>
     <Compile Include="CONEXIONBD.cs" />
+    <Compile Include="EGRESOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EGRESOS.Designer.cs">
+      <DependentUpon>EGRESOS.cs</DependentUpon>
+    </Compile>
     <Compile Include="EMPLEADO.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,11 +185,29 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="INVENTARIO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INVENTARIO.Designer.cs">
+      <DependentUpon>INVENTARIO.cs</DependentUpon>
+    </Compile>
     <Compile Include="MENU.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MENU.Designer.cs">
       <DependentUpon>MENU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ORDENCOMPRA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ORDENCOMPRA.Designer.cs">
+      <DependentUpon>ORDENCOMPRA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PLANILLA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PLANILLA.Designer.cs">
+      <DependentUpon>PLANILLA.cs</DependentUpon>
     </Compile>
     <Compile Include="PRODUCTO.cs">
       <SubType>Form</SubType>
@@ -200,6 +224,12 @@
       <DependentUpon>PROVEEDORES.cs</DependentUpon>
     </Compile>
     <Compile Include="QUERY.cs" />
+    <Compile Include="SALIDAS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SALIDAS.Designer.cs">
+      <DependentUpon>SALIDAS.cs</DependentUpon>
+    </Compile>
     <Compile Include="VENTAS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,14 +245,26 @@
     <EmbeddedResource Include="CLIENTE.resx">
       <DependentUpon>CLIENTE.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EGRESOS.resx">
+      <DependentUpon>EGRESOS.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EMPLEADO.resx">
       <DependentUpon>EMPLEADO.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="INVENTARIO.resx">
+      <DependentUpon>INVENTARIO.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MENU.resx">
       <DependentUpon>MENU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ORDENCOMPRA.resx">
+      <DependentUpon>ORDENCOMPRA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PLANILLA.resx">
+      <DependentUpon>PLANILLA.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PRODUCTO.resx">
       <DependentUpon>PRODUCTO.cs</DependentUpon>
@@ -240,12 +282,16 @@
     <EmbeddedResource Include="PROVEEDORES.resx">
       <DependentUpon>PROVEEDORES.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SALIDAS.resx">
+      <DependentUpon>SALIDAS.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VENTAS.resx">
       <DependentUpon>VENTAS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VER_TABLAS.resx">
       <DependentUpon>VER_TABLAS.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include=".editorconfig" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -56,7 +56,7 @@
             this.DGVPROVEEDORES.RowHeadersWidth = 51;
             this.DGVPROVEEDORES.RowTemplate.Height = 24;
             this.DGVPROVEEDORES.Size = new System.Drawing.Size(1085, 170);
-            this.DGVPROVEEDORES.TabIndex = 0;
+            this.DGVPROVEEDORES.TabIndex = 7;
             this.DGVPROVEEDORES.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVPROVEEDORES_CellClick);
             // 
             // GBCLIENTE
@@ -90,7 +90,7 @@
             this.BTNAGREGARPROVE.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BTNAGREGARPROVE.Name = "BTNAGREGARPROVE";
             this.BTNAGREGARPROVE.Size = new System.Drawing.Size(157, 52);
-            this.BTNAGREGARPROVE.TabIndex = 3;
+            this.BTNAGREGARPROVE.TabIndex = 4;
             this.BTNAGREGARPROVE.Text = "AGREGAR";
             this.BTNAGREGARPROVE.UseVisualStyleBackColor = false;
             this.BTNAGREGARPROVE.Click += new System.EventHandler(this.BTNAGREGARPROVE_Click);
@@ -103,7 +103,7 @@
             this.BTNELIMINARPROVE.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BTNELIMINARPROVE.Name = "BTNELIMINARPROVE";
             this.BTNELIMINARPROVE.Size = new System.Drawing.Size(157, 52);
-            this.BTNELIMINARPROVE.TabIndex = 2;
+            this.BTNELIMINARPROVE.TabIndex = 5;
             this.BTNELIMINARPROVE.Text = "ELIMINAR";
             this.BTNELIMINARPROVE.UseVisualStyleBackColor = false;
             this.BTNELIMINARPROVE.Click += new System.EventHandler(this.BTNELIMINARPROVE_Click);
@@ -116,67 +116,67 @@
             this.BTNACTUALIZARPROVE.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BTNACTUALIZARPROVE.Name = "BTNACTUALIZARPROVE";
             this.BTNACTUALIZARPROVE.Size = new System.Drawing.Size(157, 52);
-            this.BTNACTUALIZARPROVE.TabIndex = 1;
+            this.BTNACTUALIZARPROVE.TabIndex = 6;
             this.BTNACTUALIZARPROVE.Text = "ACTUALIZAR";
             this.BTNACTUALIZARPROVE.UseVisualStyleBackColor = false;
             this.BTNACTUALIZARPROVE.Click += new System.EventHandler(this.BTNACTUALIZARPROVE_Click);
             // 
             // TXTTELEFONOPROVE
             // 
-            this.TXTTELEFONOPROVE.Location = new System.Drawing.Point(152, 174);
+            this.TXTTELEFONOPROVE.Location = new System.Drawing.Point(190, 168);
             this.TXTTELEFONOPROVE.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TXTTELEFONOPROVE.Name = "TXTTELEFONOPROVE";
-            this.TXTTELEFONOPROVE.Size = new System.Drawing.Size(317, 23);
-            this.TXTTELEFONOPROVE.TabIndex = 18;
+            this.TXTTELEFONOPROVE.Size = new System.Drawing.Size(317, 26);
+            this.TXTTELEFONOPROVE.TabIndex = 3;
             // 
             // TXTNOMBREPROVE
             // 
-            this.TXTNOMBREPROVE.Location = new System.Drawing.Point(152, 110);
+            this.TXTNOMBREPROVE.Location = new System.Drawing.Point(190, 109);
             this.TXTNOMBREPROVE.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TXTNOMBREPROVE.Name = "TXTNOMBREPROVE";
-            this.TXTNOMBREPROVE.Size = new System.Drawing.Size(317, 23);
-            this.TXTNOMBREPROVE.TabIndex = 15;
+            this.TXTNOMBREPROVE.Size = new System.Drawing.Size(317, 26);
+            this.TXTNOMBREPROVE.TabIndex = 2;
             // 
             // TXTIDPROVEEDOR
             // 
-            this.TXTIDPROVEEDOR.Location = new System.Drawing.Point(152, 53);
+            this.TXTIDPROVEEDOR.Location = new System.Drawing.Point(190, 55);
             this.TXTIDPROVEEDOR.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TXTIDPROVEEDOR.Name = "TXTIDPROVEEDOR";
-            this.TXTIDPROVEEDOR.Size = new System.Drawing.Size(317, 23);
-            this.TXTIDPROVEEDOR.TabIndex = 14;
+            this.TXTIDPROVEEDOR.Size = new System.Drawing.Size(317, 26);
+            this.TXTIDPROVEEDOR.TabIndex = 1;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(77, 174);
+            this.label7.Location = new System.Drawing.Point(75, 166);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(0, 15);
+            this.label7.Size = new System.Drawing.Size(0, 20);
             this.label7.TabIndex = 11;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(59, 182);
+            this.label5.Location = new System.Drawing.Point(57, 174);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 15);
+            this.label5.Size = new System.Drawing.Size(101, 20);
             this.label5.TabIndex = 9;
             this.label5.Text = "TELEFONO";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(35, 61);
+            this.label2.Location = new System.Drawing.Point(33, 53);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 15);
+            this.label2.Size = new System.Drawing.Size(139, 20);
             this.label2.TabIndex = 6;
             this.label2.Text = "ID PROVEEDOR";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(65, 115);
+            this.label3.Location = new System.Drawing.Point(57, 115);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 15);
+            this.label3.Size = new System.Drawing.Size(84, 20);
             this.label3.TabIndex = 7;
             this.label3.Text = "NOMBRE";
             // 
@@ -185,13 +185,13 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(-97, -5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 15);
+            this.label1.Size = new System.Drawing.Size(60, 20);
             this.label1.TabIndex = 5;
             this.label1.Text = "label1";
             // 
             // PROVEEDORES
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Moccasin;
             this.ClientSize = new System.Drawing.Size(1147, 492);
