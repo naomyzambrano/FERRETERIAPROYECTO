@@ -17,6 +17,7 @@ namespace FERRETERIAPROYECTO
         QUERY datos = new QUERY();
         QUERY cn = new QUERY();
         int idempleado = 1;
+        public string TipoUsuario { get; set; }
         public CLIENTE()
         {
             InitializeComponent();
@@ -36,7 +37,6 @@ namespace FERRETERIAPROYECTO
                 !string.IsNullOrEmpty(TXTAPELLIDOC.Text) &&
                 !string.IsNullOrEmpty(TXTDNIC.Text) &&
                 !string.IsNullOrEmpty(TXTTELEFONOC.Text) &&
-                !string.IsNullOrEmpty(TXTESTADOC.Text) &&
                 !string.IsNullOrEmpty(TXTDIRECCIONC.Text) &&
                 !string.IsNullOrEmpty(TXTSALDOPC.Text))
             {
@@ -49,13 +49,12 @@ namespace FERRETERIAPROYECTO
                 string apellido = TXTAPELLIDOC.Text;
                 string dni = TXTDNIC.Text;
                 int telefono = int.Parse(TXTTELEFONOC.Text);
-                string estado = TXTESTADOC.Text;
                 string direccion = TXTDIRECCIONC.Text;
                 decimal saldo = decimal.TryParse(TXTSALDOPC.Text, out decimal result) ? result : 0.00m;
                 DateTime fecha = DTPFECHAC.Value;
 
                 // Agregar cliente y mostrar en el DataGridView
-                datos.agregarcliente(nombre, apellido, dni, telefono, estado, direccion, saldo, fecha);
+                datos.agregarcliente(nombre, apellido, dni, telefono, direccion, saldo, fecha);
                 datos.mostrarclientes(DGVCLIENTE);
 
                 // Limpiar campos
@@ -63,9 +62,7 @@ namespace FERRETERIAPROYECTO
                 TXTAPELLIDOC.Clear();
                 TXTDNIC.Clear();
                 TXTTELEFONOC.Clear();
-                TXTESTADOC.Clear();
                 TXTDIRECCIONC.Clear();
-                TXTSALDOPC.Clear();
                 DTPFECHAC.Value = DateTime.Now;
             }
             else
@@ -87,7 +84,6 @@ namespace FERRETERIAPROYECTO
             string apellido = DGVCLIENTE.CurrentRow.Cells["apellidoc"].Value?.ToString();
             string dni = DGVCLIENTE.CurrentRow.Cells["dnic"].Value?.ToString();
             int telefono = Convert.ToInt32((DGVCLIENTE.CurrentRow.Cells["telefonoc"].Value));
-            string estado = DGVCLIENTE.CurrentRow.Cells["estado"].Value?.ToString();
             string direccion = DGVCLIENTE.CurrentRow.Cells["direccion"].Value?.ToString();
             decimal saldo = Convert.ToDecimal(DGVCLIENTE.CurrentRow.Cells["saldopendiente"].Value);
             DateTime fecha = Convert.ToDateTime(DGVCLIENTE.CurrentRow.Cells["fechac"].Value);
@@ -100,7 +96,7 @@ namespace FERRETERIAPROYECTO
             {
                 if (!string.IsNullOrEmpty(nombre) && !string.IsNullOrEmpty(apellido))
                 {
-                    datos.eliminarclientes(id, TXTNOMBREC.Text, TXTAPELLIDOC.Text, TXTDNIC.Text, telefono, TXTESTADOC.Text,TXTDIRECCIONC.Text, saldo, DTPFECHAC.Value);
+                    datos.eliminarclientes(id, TXTNOMBREC.Text, TXTAPELLIDOC.Text, TXTDNIC.Text, telefono,TXTDIRECCIONC.Text, saldo, DTPFECHAC.Value);
 
                     datos.mostrarclientes(DGVCLIENTE);
                 }
@@ -113,7 +109,14 @@ namespace FERRETERIAPROYECTO
             {
                 MessageBox.Show("DATOS NO ELIMINADOS.");
             }
-
+            // Limpiar campos
+            TXTNOMBREC.Clear();
+            TXTAPELLIDOC.Clear();
+            TXTDNIC.Clear();
+            TXTTELEFONOC.Clear();
+            TXTDIRECCIONC.Clear();
+            TXTSALDOPC.Clear();
+            DTPFECHAC.Value = DateTime.Now;
 
         }
 
@@ -123,16 +126,15 @@ namespace FERRETERIAPROYECTO
             TXTAPELLIDOC.Text = DGVCLIENTE.CurrentRow.Cells[2].Value.ToString();
             TXTDNIC.Text = DGVCLIENTE.CurrentRow.Cells[3].Value.ToString();
             TXTTELEFONOC.Text = DGVCLIENTE.CurrentRow.Cells[4].Value.ToString();
-            TXTESTADOC.Text = DGVCLIENTE.CurrentRow.Cells[5].Value.ToString();
-            TXTDIRECCIONC.Text = DGVCLIENTE.CurrentRow.Cells[6].Value.ToString();
-            TXTSALDOPC.Text = DGVCLIENTE.CurrentRow.Cells[7].Value.ToString();
-            DTPFECHAC.Text = DGVCLIENTE.CurrentRow.Cells[8].Value.ToString();
+            TXTDIRECCIONC.Text = DGVCLIENTE.CurrentRow.Cells[5].Value.ToString();
+            TXTSALDOPC.Text = DGVCLIENTE.CurrentRow.Cells[6].Value.ToString();
+            DTPFECHAC.Text = DGVCLIENTE.CurrentRow.Cells[7].Value.ToString();
         }
 
         private void BTNACTUALIZARC_Click(object sender, EventArgs e)
         {
             int id, telefono;
-            string nombre, apellido, dni, estado, direccion;
+            string nombre, apellido, dni, direccion;
             decimal saldo;
              DateTime fecha;
 
@@ -141,13 +143,30 @@ namespace FERRETERIAPROYECTO
             apellido = TXTAPELLIDOC.Text;
             dni = TXTDNIC.Text;
             telefono = Convert.ToInt32(TXTTELEFONOC.Text);
-            estado = TXTESTADOC.Text;
             direccion = TXTDIRECCIONC.Text;
             saldo = decimal.Parse(TXTSALDOPC.Text);
             fecha = DTPFECHAC.Value;
 
-            datos.actualizarcliente(id, nombre, apellido, dni,telefono,estado,direccion,saldo, fecha);
+            datos.actualizarcliente(id, nombre, apellido, dni,telefono,direccion,saldo, fecha);
             datos.mostrarclientes(DGVCLIENTE);
+            // Limpiar campos
+            TXTNOMBREC.Clear();
+            TXTAPELLIDOC.Clear();
+            TXTDNIC.Clear();
+            TXTTELEFONOC.Clear();
+            TXTDIRECCIONC.Clear();
+            DTPFECHAC.Value = DateTime.Now;
+        }
+
+        private void btnVOLVER_Click(object sender, EventArgs e)
+        {
+            MENU frm = new MENU();
+            frm.Show();
+            this.Close();
+
+           
+            
+            
         }
     }
 }

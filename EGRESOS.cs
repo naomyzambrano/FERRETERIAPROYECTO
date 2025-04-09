@@ -117,5 +117,22 @@ namespace FERRETERIAPROYECTO
         {
 
         }
+
+        private void btnVOLVER_Click(object sender, EventArgs e)
+        {
+            MENU frm = new MENU();
+            frm.Show();
+            this.Close();
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

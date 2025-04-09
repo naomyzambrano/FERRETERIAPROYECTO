@@ -130,8 +130,11 @@ namespace FERRETERIAPROYECTO
             DTPFECHACOMPRA.Text = DGVOCOMPRA.CurrentRow.Cells[3].Value.ToString();
         }
 
-
-
-
+        private void btnVOLVER_Click(object sender, EventArgs e)
+        {
+            MENU frm = new MENU();
+            frm.Show();
+            this.Close();
+        }
     }
 }

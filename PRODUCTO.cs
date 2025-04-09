@@ -30,13 +30,16 @@ namespace FERRETERIAPROYECTO
             
 
         }
+       
 
         private void PRODUCTO_Load(object sender, EventArgs e)
         {
+            
             cargarcate();
-             cargarproveedor();
-            datos.mostrarproducto(DGVPRODUCTO);
+            cargarproveedor();
+            //datos.mostrarproducto(DGVPRODUCTO);
             TXTIDPRODUCTO.Text = idprod.ToString();
+            DGVPRODUCTO.DataSource = datos.MostrarProductosConNombres();
         }
 
         private void CMBCATEGORIAPRODU_SelectedIndexChanged(object sender, EventArgs e)
@@ -203,6 +206,23 @@ namespace FERRETERIAPROYECTO
             datos.mostrarproducto(DGVPRODUCTO);
 
 
+        }
+
+        private void CMBPROVE_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
+
+        }
+
+        private void btnVOLVER_Click(object sender, EventArgs e)
+        {
+            MENU frm = new MENU();
+            frm.Show();
+            this.Close();
         }
     }
 }

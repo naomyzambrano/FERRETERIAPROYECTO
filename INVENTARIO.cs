@@ -46,7 +46,7 @@ namespace FERRETERIAPROYECTO
             CMBSALIDAINV.DataSource = dt;
             CMBSALIDAINV.DisplayMember = "cantidad";
             CMBSALIDAINV.ValueMember = "idsalidas";
-            CMBSALIDAINV.SelectedIndex = 0;
+            //CMBSALIDAINV.SelectedIndex = 0;
         }
 
         private void cargardatoscmbsal()
@@ -214,6 +214,28 @@ namespace FERRETERIAPROYECTO
             TXTUBIINV.Text = DGVINVENTARIO.CurrentRow.Cells[4].Value.ToString();
            DTPFECHAINV.Text = DGVINVENTARIO.CurrentRow.Cells[5].Value.ToString();
             CMBSALIDAINV.Text =DGVINVENTARIO.CurrentRow.Cells[6].Value.ToString();
+        }
+
+        private void TXTSTOCKMIN_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnVOLVER_Click(object sender, EventArgs e)
+        {
+            MENU frm = new MENU();
+            frm.Show();
+            this.Close();
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

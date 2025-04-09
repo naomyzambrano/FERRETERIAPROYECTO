@@ -119,5 +119,12 @@ namespace FERRETERIAPROYECTO
             datos.actualizarproveedor(id, nombre, telefono);
             datos.mostrarproveedor(DGVPROVEEDORES);
         }
+
+        private void btnVOLVER_Click(object sender, EventArgs e)
+        {
+            MENU frm = new MENU();
+            frm.Show();
+            this.Close();
+        }
     }
 }

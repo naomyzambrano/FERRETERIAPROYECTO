@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
+using static FERRETERIAPROYECTO.CREAR_VENTA;
 
 namespace FERRETERIAPROYECTO
 {
@@ -125,19 +126,18 @@ namespace FERRETERIAPROYECTO
 
         }
 
-        public void agregarcliente(string nombre, string apellido, string dni, int telefono, string estado, string direccion, decimal saldo, DateTime fecha)
+        public void agregarcliente(string nombre, string apellido, string dni, int telefono, string direccion, decimal saldo, DateTime fecha)
         {
             try
             {
 
                 cxn.Abrir();
-                string query = "insert into cliente (nombrec,apellidoc,dnic,telefonoc,estado,direccion,saldopendiente,fechac) VALUES(@nombrec,@apellidoc,@dnic,@telefonoc,@estado,@direccion,@saldopendiente,@fechac)";
+                string query = "insert into cliente (nombrec,apellidoc,dnic,telefonoc,direccion,saldopendiente,fechac) VALUES(@nombrec,@apellidoc,@dnic,@telefonoc,@direccion,@saldopendiente,@fechac)";
                 SqlCommand cmd = new SqlCommand(query, cxn.cn);
                 cmd.Parameters.AddWithValue("@nombrec", nombre);
                 cmd.Parameters.AddWithValue("@apellidoc", apellido);
                 cmd.Parameters.AddWithValue("@dnic", dni);
                 cmd.Parameters.AddWithValue("@telefonoc", telefono);
-                cmd.Parameters.AddWithValue("@estado", estado);
                 cmd.Parameters.AddWithValue("@direccion", direccion);
                 cmd.Parameters.AddWithValue("@saldopendiente", saldo);
                 cmd.Parameters.AddWithValue("@fechac", fecha);
@@ -173,13 +173,13 @@ namespace FERRETERIAPROYECTO
             }
         }
 
-        public void eliminarclientes(int id, string nombre, string apellido, string dni, int telefono, string estado, string direccion, decimal saldo, DateTime fecha)
+        public void eliminarclientes(int id, string nombre, string apellido, string dni, int telefono,string direccion, decimal saldo, DateTime fecha)
         {
             try
             {
 
                 cxn.Abrir();
-                string query = "delete from cliente where idcliente = @idcliente AND nombrec =@nombrec  AND  apellidoc= @apellidoc AND  dnic = @dnic  AND telefonoc =@telefonoc AND estado =@estado AND direccion =@direccion AND saldopendiente =@saldopendiente AND fechac =@fechac ";
+                string query = "delete from cliente where idcliente = @idcliente AND nombrec =@nombrec  AND  apellidoc= @apellidoc AND  dnic = @dnic  AND telefonoc =@telefonoc AND direccion =@direccion AND saldopendiente =@saldopendiente AND fechac =@fechac ";
                 //DELETE FROM RUTA WHERE id_viaje = @id AND origen = @origen  AND destino = @destino
                 SqlCommand cmd = new SqlCommand(query, cxn.cn);
                 cmd.Parameters.AddWithValue("@idcliente", id);
@@ -187,7 +187,6 @@ namespace FERRETERIAPROYECTO
                 cmd.Parameters.AddWithValue("@apellidoc", apellido);
                 cmd.Parameters.AddWithValue("@dnic", dni);
                 cmd.Parameters.AddWithValue("@telefonoc", telefono);
-                cmd.Parameters.AddWithValue("@estado", estado);
                 cmd.Parameters.AddWithValue("@direccion", direccion);
                 cmd.Parameters.AddWithValue("@saldopendiente", saldo);
                 cmd.Parameters.AddWithValue("@fechac", fecha);
@@ -202,13 +201,13 @@ namespace FERRETERIAPROYECTO
 
         }
 
-        public void actualizarcliente(int id, string nombre, string apellido, string dni, int telefono, string estado, string direccion, decimal saldo, DateTime fecha)
+        public void actualizarcliente(int id, string nombre, string apellido, string dni, int telefono,string direccion, decimal saldo, DateTime fecha)
         {
             try
             {
 
                 cxn.Abrir();
-                string query = "update cliente set nombrec =@nombrec, apellidoc= @apellidoc ,dnic = @dnic ,telefonoc =@telefonoc , estado = @estado, direccion=@direccion , saldopendiente =@saldopendiente ,fechac =@fechac where idcliente = @idcliente";
+                string query = "update cliente set nombrec =@nombrec, apellidoc= @apellidoc ,dnic = @dnic ,telefonoc =@telefonoc , direccion=@direccion , saldopendiente =@saldopendiente ,fechac =@fechac where idcliente = @idcliente";
                 SqlCommand cmd = new SqlCommand(query, cxn.cn);
 
 
@@ -217,7 +216,6 @@ namespace FERRETERIAPROYECTO
                 cmd.Parameters.AddWithValue("@apellidoc", apellido);
                 cmd.Parameters.AddWithValue("@dnic", dni);
                 cmd.Parameters.AddWithValue("@telefonoc", telefono);
-                cmd.Parameters.AddWithValue("@estado", estado);
                 cmd.Parameters.AddWithValue("@direccion", direccion);
                 cmd.Parameters.AddWithValue("@saldopendiente", saldo);
                 cmd.Parameters.AddWithValue("@fechac", fecha);
@@ -354,6 +352,11 @@ namespace FERRETERIAPROYECTO
         {
             try
             {
+                if (stock < 2)
+                {
+                    MessageBox.Show("El stock inicial no puede ser menor a 2.");
+                    return;
+                }
 
                 cxn.Abrir();
                 string query = "insert into producto (nombrep,stock,descripcion,fkidcategoria,fkidproveedor,precioc,preciov) VALUES(@nombrep,@stock,@descripcion,@fkidcategoria,@fkidproveedor,@precioc,@preciov)";
@@ -374,6 +377,8 @@ namespace FERRETERIAPROYECTO
             }
 
         }
+
+
 
         public void mostrarproducto(DataGridView dgv)
         {
@@ -558,6 +563,61 @@ namespace FERRETERIAPROYECTO
             }
 
         }
+
+        // Método para eliminar la venta y sus detalles
+       /* public void EliminarVentaCompleta(int idventa)
+        {
+            try
+            {
+                // Abrir conexión a la base de datos
+                cxn.Abrir();
+
+                // Eliminar los detalles de la venta (de la tabla detalleventa)
+                string deleteDetalleQuery = "DELETE FROM detalleventa WHERE fkidventa = @idventa";
+                SqlCommand cmdDetalle = new SqlCommand(deleteDetalleQuery, cxn.cn);
+                cmdDetalle.Parameters.AddWithValue("@idventa", idventa);
+                cmdDetalle.ExecuteNonQuery(); // Ejecutar la eliminación de detalles
+
+                // Eliminar la venta de la tabla venta
+                string deleteVentaQuery = "DELETE FROM venta WHERE idventa = @idventa";
+                SqlCommand cmdVenta = new SqlCommand(deleteVentaQuery, cxn.cn);
+                cmdVenta.Parameters.AddWithValue("@idventa", idventa);
+                cmdVenta.ExecuteNonQuery(); // Ejecutar la eliminación de la venta
+
+                // Cerrar la conexión
+                cxn.Cerrar();
+            }
+            catch (Exception ex)
+            {
+                // Captura cualquier excepción y la lanza con un mensaje de error
+                throw new Exception("Error al eliminar la venta y los detalles: " + ex.Message);
+            }
+        }
+
+        // Método para obtener todas las ventas
+        public DataTable obtenerventas()
+        {
+            try
+            {
+                // Abrir conexión
+                cxn.Abrir();
+
+                string sql = "SELECT idventa, fecha, fkidcliente, fkidempleado, total FROM venta";
+                SqlDataAdapter da = new SqlDataAdapter(sql, cxn.cn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                // Cerrar la conexión
+                cxn.Cerrar();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                // Captura cualquier error en la consulta y lo lanza
+                throw new Exception("Error al obtener las ventas: " + ex.Message);
+            }
+        }*/
+
 
         public void mostrarventa(DataGridView dgv)
         {
@@ -1241,6 +1301,186 @@ namespace FERRETERIAPROYECTO
         //O QUIZA SOLO HAY 1 PORQUE QUIZA SE ESTA INSERTANDO DESDE ACTUALIZAR SALDO Y NO DESDE AGREGARVENTA
         // SI ES ASI SIGNIFICA QUE NO ESTA GUARDANDO NADA EN DETALLE VENTA PORTANTO ARREGLARLO
         //PASARLO A UNA SOLA Y USAR EL ID DE VENTA PARA LLAMAR A DETALLEVENTA
+
+
+        // Actualiza el stock después de la venta
+        /*public void ActualizarStock(int idProducto, int cantidadVendida)
+        {
+            try
+            {
+                cxn.Abrir();
+                string query = "UPDATE producto SET stock = stock - @cantidad WHERE idproducto = @idProducto";
+                using (SqlCommand cmd = new SqlCommand(query, cxn.cn))
+                {
+                    cmd.Parameters.AddWithValue("@cantidad", cantidadVendida);
+                    cmd.Parameters.AddWithValue("@idProducto", idProducto);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al actualizar el stock: " + ex.Message);
+            }
+            finally
+            {
+                cxn.Cerrar();
+            }
+        }*/
+        public int ObtenerStockProducto(int idProducto)
+        {
+            int stock = 0;
+            using (SqlCommand cmd = new SqlCommand("SELECT stock FROM producto WHERE idproducto = @id", cxn.cn))
+            {
+                cmd.Parameters.AddWithValue("@id", idProducto);
+
+                cxn.Abrir();
+                var result = cmd.ExecuteScalar();
+                cxn.Cerrar();
+
+                if (result != null)
+                {
+                    stock = Convert.ToInt32(result);
+                }
+            }
+            return stock;
+        }
+
+        public void ActualizarStockProducto(int idProducto, int cantidadVendida)
+        {
+            using (SqlCommand cmd = new SqlCommand("UPDATE producto SET stock = stock - @cantidad WHERE idproducto = @id",cxn.cn))
+            {
+                cmd.Parameters.AddWithValue("@cantidad", cantidadVendida);
+                cmd.Parameters.AddWithValue("@id", idProducto);
+
+                cxn.Abrir();
+                cmd.ExecuteNonQuery();
+                cxn.Cerrar();
+            }
+        }
+
+
+
+        public DataTable MostrarProductosConNombres()
+        {
+            DataTable tabla = new DataTable();
+            string consulta = @"SELECT 
+                            p.idproducto,
+                            p.nombrep AS Producto,
+                            p.stock AS Stock,
+                            p.descripcion AS Descripción,
+                            c.nombrecate AS Categoría,
+                            pr.nombreprov AS Proveedor,
+                            p.precioc AS PrecioCompra,
+                            p.preciov AS PrecioVenta
+                        FROM producto p
+                        JOIN categoria c ON p.fkidcategoria = c.idcategoria
+                        JOIN proveedor pr ON p.fkidproveedor = pr.idproveedor";
+            SqlDataAdapter da = new SqlDataAdapter(consulta,cxn.cn);
+            da.Fill(tabla);
+            return tabla;
+
+        }
+        public DataTable ObtenerClientes()
+        {
+            SqlDataAdapter da = new SqlDataAdapter("SELECT idcliente, dnic, nombrec, apellidoc, direccion, telefonoc FROM cliente", cxn.cn);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
+
+        public DataTable ObtenerProductos()
+        {
+            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM producto", cxn.cn);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
+
+        
+
+
+        public DataTable ObtenerMetodosPago()
+        {
+            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM metodopago", cxn.cn);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
+
+        public int GuardarVenta(Venta venta, List<DetalleVenta> detalles)
+        {
+            cxn.Abrir();
+            SqlTransaction transaction = cxn.cn.BeginTransaction();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("INSERT INTO venta (fecha, fkidcliente, fkidempleado, fkidmetodo, escredito, subtotal, total, isv) OUTPUT INSERTED.idventa VALUES (@fecha, @cliente, @empleado, @metodo, @escredito, @subtotal, @total, @isv)", cxn.cn, transaction);
+
+                cmd.Parameters.AddWithValue("@fecha", venta.Fecha);
+                cmd.Parameters.AddWithValue("@cliente", venta.ClienteID);
+                cmd.Parameters.AddWithValue("@empleado", venta.EmpleadoID);
+                cmd.Parameters.AddWithValue("@metodo", venta.MetodoPagoID);
+                cmd.Parameters.AddWithValue("@escredito", venta.EsCredito);
+                cmd.Parameters.AddWithValue("@subtotal", venta.Subtotal);
+                cmd.Parameters.AddWithValue("@total", venta.Total);
+                cmd.Parameters.AddWithValue("@isv", venta.ISV);
+
+                int idVenta = (int)cmd.ExecuteScalar();
+
+                foreach (var detalle in detalles)
+                {
+                    SqlCommand detalleCmd = new SqlCommand("INSERT INTO detalleventa (fkidventa, fkidproducto, cantidad, subtotal, preciouni) VALUES (@venta, @producto, @cantidad, @subtotal, @precio)", cxn.cn, transaction);
+                    detalleCmd.Parameters.AddWithValue("@venta", idVenta);
+                    detalleCmd.Parameters.AddWithValue("@producto", detalle.ProductoID);
+                    detalleCmd.Parameters.AddWithValue("@cantidad", detalle.Cantidad);
+                    detalleCmd.Parameters.AddWithValue("@subtotal", detalle.Subtotal);
+                    detalleCmd.Parameters.AddWithValue("@precio", detalle.PrecioUnitario);
+                    detalleCmd.ExecuteNonQuery();
+                }
+
+                if (venta.EsCredito)
+                {
+                    SqlCommand saldoCmd = new SqlCommand("UPDATE cliente SET saldopendiente = saldopendiente + @monto WHERE idcliente = @id", cxn.cn, transaction);
+                    saldoCmd.Parameters.AddWithValue("@monto", venta.Total);
+                    saldoCmd.Parameters.AddWithValue("@id", venta.ClienteID);
+                    saldoCmd.ExecuteNonQuery();
+                }
+
+                transaction.Commit();
+                cxn.Cerrar();
+                return idVenta;
+            }
+            catch
+            {
+                transaction.Rollback();
+                cxn.Cerrar();
+                throw;
+            }
+        }
+        public DataTable ObtenerPrecioProducto(int idProducto)
+        {
+            cxn.Abrir();
+            DataTable dt = new DataTable();
+            string query = "SELECT preciov FROM producto WHERE idproducto = @idProducto";
+            using (SqlCommand cmd = new SqlCommand(query, cxn.cn))
+            {
+                cmd.Parameters.AddWithValue("@idProducto", idProducto);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+            }
+            cxn.Cerrar();
+            return dt;
+        }
+
+
+        
+        
+
+
+
+
+
+
+
     }
 
 

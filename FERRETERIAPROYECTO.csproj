@@ -167,6 +167,12 @@
       <DependentUpon>CLIENTE.cs</DependentUpon>
     </Compile>
     <Compile Include="CONEXIONBD.cs" />
+    <Compile Include="CREAR_VENTA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CREAR_VENTA.Designer.cs">
+      <DependentUpon>CREAR_VENTA.cs</DependentUpon>
+    </Compile>
     <Compile Include="EGRESOS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -236,14 +242,36 @@
     <Compile Include="VENTAS.Designer.cs">
       <DependentUpon>VENTAS.cs</DependentUpon>
     </Compile>
+    <Compile Include="VER_EMPLEADO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VER_EMPLEADO.Designer.cs">
+      <DependentUpon>VER_EMPLEADO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VER_PROVEEDORES.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VER_PROVEEDORES.Designer.cs">
+      <DependentUpon>VER_PROVEEDORES.cs</DependentUpon>
+    </Compile>
     <Compile Include="VER_TABLAS.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VER_TABLAS.Designer.cs">
       <DependentUpon>VER_TABLAS.cs</DependentUpon>
     </Compile>
+    <Compile Include="VER_VENTA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VER_VENTA.Designer.cs">
+      <DependentUpon>VER_VENTA.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CLIENTE.resx">
       <DependentUpon>CLIENTE.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CREAR_VENTA.resx">
+      <DependentUpon>CREAR_VENTA.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EGRESOS.resx">
       <DependentUpon>EGRESOS.cs</DependentUpon>
@@ -288,8 +316,17 @@
     <EmbeddedResource Include="VENTAS.resx">
       <DependentUpon>VENTAS.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VER_EMPLEADO.resx">
+      <DependentUpon>VER_EMPLEADO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VER_PROVEEDORES.resx">
+      <DependentUpon>VER_PROVEEDORES.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VER_TABLAS.resx">
       <DependentUpon>VER_TABLAS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VER_VENTA.resx">
+      <DependentUpon>VER_VENTA.cs</DependentUpon>
     </EmbeddedResource>
     <None Include=".editorconfig" />
     <None Include="packages.config" />
@@ -321,12 +358,15 @@
     <Content Include="IMAGENES\4137140-building-construction-industry-setting_114075.ico" />
     <Content Include="IMAGENES\accounting_calculator_calculation_calculate_office_icon_191148.ico" />
     <Content Include="IMAGENES\account_user_avatar_worker_profile_job_employee_icon_261707.ico" />
+    <Content Include="IMAGENES\arrow_arrows_back_direction_left_navigation_right_icon_123237.ico" />
     <Content Include="IMAGENES\box_full_products_14639.ico" />
     <Content Include="IMAGENES\business_application_addmale_useradd_insert_add_user_client_2312.ico" />
     <Content Include="IMAGENES\business_man_usersearch_thesearch_theclient_2356.ico" />
+    <Content Include="IMAGENES\document_revert_icon_180801.ico" />
     <Content Include="IMAGENES\eye-hidden-design-black-interface-symbol_icon-icons.com_54536 %281%29.ico" />
     <Content Include="IMAGENES\offer_discount_sales_add_cart_icon_228001.ico" />
     <Content Include="IMAGENES\preferences_product_box_setting_options_control_inventory_icon_261649.ico" />
+    <Content Include="IMAGENES\return_icon_177921.ico" />
     <Content Include="IMAGENES\shopping-cart-add-button_icon-icons.com_56132.ico" />
     <Content Include="IMAGENES\signout_106525.ico" />
     <Content Include="IMAGENES\twocirclingarrows1_120592.ico" />

@@ -127,29 +127,38 @@
   <data name="offer_discount_sales_add_cart_icon_228001" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\IMAGENES\offer_discount_sales_add_cart_icon_228001.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="1904677-add-addition-calculate-charge-create-new-plus_1225271" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\IMAGENES\1904677-add-addition-calculate-charge-create-new-plus_122527.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="return_icon_177921" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\IMAGENES\return_icon_177921.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="4137140-building-construction-industry-setting_1140751" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\IMAGENES\4137140-building-construction-industry-setting_114075.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="shopping-cart-add-button_icon-icons.com_56132" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\IMAGENES\shopping-cart-add-button_icon-icons.com_56132.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1496969506-a-digital-survey_84686" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\IMAGENES\1496969506-a-digital-survey_84686.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="return_icon_1779211" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\IMAGENES\return_icon_177921.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="signout_106525" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\IMAGENES\signout_106525.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="4137140-building-construction-industry-setting_114075" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4137140-building-construction-industry-setting_114075.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="business_man_usersearch_thesearch_theclient_2356" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\IMAGENES\business_man_usersearch_thesearch_theclient_2356.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1496969506-a-digital-survey_84686" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\IMAGENES\1496969506-a-digital-survey_84686.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1490129349-rounded05_82190" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\IMAGENES\1490129349-rounded05_82190.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1491254081-19document-list_82931" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\IMAGENES\1491254081-19document-list_82931.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="document_revert_icon_180801" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\IMAGENES\document_revert_icon_180801.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="account_user_avatar_worker_profile_job_employee_icon_261707" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\IMAGENES\account_user_avatar_worker_profile_job_employee_icon_261707.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="4137140-building-construction-industry-setting_114075" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\4137140-building-construction-industry-setting_114075.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1904677-add-addition-calculate-charge-create-new-plus_122527" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\IMAGENES\1904677-add-addition-calculate-charge-create-new-plus_122527.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,10 +166,19 @@
   <data name="accounting_calculator_calculation_calculate_office_icon_191148" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\IMAGENES\accounting_calculator_calculation_calculate_office_icon_191148.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="arrow_arrows_back_direction_left_navigation_right_icon_123237" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\IMAGENES\arrow_arrows_back_direction_left_navigation_right_icon_123237.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="account_user_avatar_worker_profile_job_employee_icon_261707" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\IMAGENES\account_user_avatar_worker_profile_job_employee_icon_261707.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="business_application_addmale_useradd_insert_add_user_client_2312" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\IMAGENES\business_application_addmale_useradd_insert_add_user_client_2312.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1904677-add-addition-calculate-charge-create-new-plus_1225271" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\IMAGENES\1904677-add-addition-calculate-charge-create-new-plus_122527.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1491254081-19document-list_82931" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\IMAGENES\1491254081-19document-list_82931.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="business_application_addmale_useradd_insert_add_user_client_23121" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\IMAGENES\business_application_addmale_useradd_insert_add_user_client_2312.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

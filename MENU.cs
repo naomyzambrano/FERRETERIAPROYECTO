@@ -33,7 +33,6 @@ namespace FERRETERIAPROYECTO
                 menucliente.Visible = true;
                 menuvercliente.Visible = true;
                 minventario.Visible = true;
-                mingreso.Visible = true;
                 menuproducto.Visible = true;
                 mplanilla.Visible = true;
                 mreporte.Visible = true;
@@ -54,7 +53,6 @@ namespace FERRETERIAPROYECTO
                 menucliente.Visible = true;
                 menuvercliente.Visible = true;
                 minventario.Visible = false;
-                mingreso.Visible = false;
                 menuproducto.Visible = false;
                 mplanilla.Visible = false;
                 mreporte.Visible = false;
@@ -73,7 +71,6 @@ namespace FERRETERIAPROYECTO
                 menucliente.Visible = true;
                 menuvercliente.Visible = true;
                 minventario.Visible = true;
-                mingreso.Visible = false;
                 menuproducto.Visible = true;
                 mplanilla.Visible = false;
                 mreporte.Visible = false;
@@ -91,12 +88,14 @@ namespace FERRETERIAPROYECTO
             VER_TABLAS frm = new VER_TABLAS();
             frm.SeleccionarPestana("VER_CLIENTE"); // <- este es el nombre exacto de la pestaña
             frm.Show();
+            this.Close();
         }
 
         private void cREARVENTASToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            VENTAS frm = new VENTAS();
+            CREAR_VENTA frm = new CREAR_VENTA();
             frm.Show();
+            this.Close();
         }
 
         private void eMPLEADOSToolStripMenuItem_Click(object sender, EventArgs e)
@@ -122,8 +121,7 @@ namespace FERRETERIAPROYECTO
 
         private void MPROVEEDOR_Click(object sender, EventArgs e)
         {
-            PROVEEDORES frm = new PROVEEDORES();
-            frm.Show();
+           
 
         }
 
@@ -140,12 +138,14 @@ namespace FERRETERIAPROYECTO
         {
             CLIENTE frm = new CLIENTE();
             frm.Show();
+            this.Close();
         }
 
         private void aGREGARPRODUCTOToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PRODUCTO frm = new PRODUCTO();
             frm.Show();
+            this.Close();
         }
 
         private void mverproducto_Click(object sender, EventArgs e)
@@ -153,6 +153,7 @@ namespace FERRETERIAPROYECTO
             VER_TABLAS frm = new VER_TABLAS();
             frm.SeleccionarPestana("VER_PRODUCTO"); // <- este es el nombre exacto de la pestaña
             frm.Show();
+            this.Close();
 
         }
 
@@ -160,14 +161,94 @@ namespace FERRETERIAPROYECTO
         {
             EMPLEADO frm = new EMPLEADO();
             frm.Show();
+            this.Close();
         }
 
         private void mverempleado_Click(object sender, EventArgs e)
         {
-            VER_TABLAS frm = new VER_TABLAS();
-            frm.SeleccionarPestana("VER_EMPLEADO"); // <- este es el nombre exacto de la pestaña
+            VER_EMPLEADO frm = new VER_EMPLEADO(); 
             frm.Show();
+            this.Close();
 
+        }
+
+        private void BTNLOGIN_Click(object sender, EventArgs e)
+        {
+            Form1 frm = new Form1();
+            frm.Show();
+            this.Close();
+
+        }
+
+        private void BTNSALIR_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iNGRESARPROVEEDORESToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PROVEEDORES frm = new PROVEEDORES();
+            frm.Show();
+            this.Close();
+        }
+
+        private void vERPROVEEDORESToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VER_PROVEEDORES frm = new VER_PROVEEDORES();
+            frm.Show();
+            this.Close();
+        }
+
+        private void mplanilla_Click(object sender, EventArgs e)
+        {
+            PLANILLA frm = new PLANILLA();
+            frm.Show();
+            this.Close();
+        }
+
+        private void msalidaproducto_Click(object sender, EventArgs e)
+        {
+            SALIDAS frm = new SALIDAS();
+            frm.Show();
+            this.Close();
+        }
+
+        private void mentradaproducto_Click(object sender, EventArgs e)
+        {
+            ORDENCOMPRA frm = new ORDENCOMPRA();
+            frm.Show();
+            this.Close();
+        }
+
+        private void megresos_Click(object sender, EventArgs e)
+        {
+            EGRESOS frm = new EGRESOS();
+            frm.Show();
+            this.Close();
+        }
+
+        private void eDITARINVENTARIOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            INVENTARIO frm = new INVENTARIO();
+            frm.Show();
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void vERVENTASToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VER_VENTA frm = new VER_VENTA();
+            frm.Show();
+            this.Close();
         }
     }
 }

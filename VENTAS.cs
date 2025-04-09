@@ -12,6 +12,7 @@ namespace FERRETERIAPROYECTO
 {
     public partial class VENTAS : Form
     {
+        CONEXIONBD cxn = new CONEXIONBD();
 
         QUERY query = new QUERY();
         QUERY datos = new QUERY();
@@ -87,18 +88,18 @@ namespace FERRETERIAPROYECTO
         {
 
         }
-
+        
         private void VENTAS_Load(object sender, EventArgs e)
         {
 
-            //idventa++;
-            //TXTIDVENTA.Text = idventa.ToString();
-
+            idventa++;
+            TXTIDVENTA.Text = idventa.ToString();
+            
             cargarclientes();
             cargarproducto();
             cargarempleado();
             cargarmetodo();
-            datos.mostrarventa(DGVVENTA);
+            datos.mostrarventa(DGVVENTAssssssssssssssssss);
         }
 
         private void TXTCREDITOVENTA_TextChanged(object sender, EventArgs e)
@@ -118,9 +119,33 @@ namespace FERRETERIAPROYECTO
 
         private void BTNAGREGARVENTA_Click(object sender, EventArgs e)
         {
-            //idventa++;
-            //TXTIDVENTA.Text = idventa.ToString();
+           /* try
+            {
+                int idProducto = Convert.ToInt32(CMBIDPRODUCTOVENTA.SelectedValue); // ID del producto
+                int cantidadVenta = Convert.ToInt32(TXTCANTIDADDV.Text);     // Cantidad a vender
 
+                int stockActual = query.ObtenerStockDisponible(idProducto);
+
+                if (stockActual <= 2)
+                {
+                    MessageBox.Show("PRODUCTO INSUFICIENTE. Solo quedan " + stockActual + " unidades.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (cantidadVenta > stockActual)
+                {
+                    MessageBox.Show("No hay suficiente stock para completar la venta. Solo quedan " + stockActual + " unidades.", "Stock insuficiente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+               
+               // query.ActualizarStock(idProducto, cantidadVenta);
+
+                MessageBox.Show("Venta registrada y stock actualizado con éxito.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en la venta: " + ex.Message);
+            }
             actualizarvalores();
 
             //int escredito = 0;  // Por defecto, si el RadioButton "No" está seleccionado, el valor es 0
@@ -141,11 +166,11 @@ namespace FERRETERIAPROYECTO
             int fkidempleado = Convert.ToInt32(CMBIDEMPLEADOV.SelectedValue);
             int fkidmetodo = Convert.ToInt32(CMBMETODO.SelectedValue);
             //bool credito = (RBSI1.Checked) ? true : false;
-             bool credito = RBSI1.Checked;
+            bool credito = RBSI1.Checked;
 
             //credito = (escredito == 1);
             bool esCredito = RBSI1.Checked;
-            
+
             float subtotal = Convert.ToSingle(TXTSUBTOTALV.Text);
             if (!float.TryParse(TXTISVVENTA.Text, out float isv))
             {
@@ -155,44 +180,31 @@ namespace FERRETERIAPROYECTO
             //float isv = Convert.ToSingle(TXTISVVENTA.Text);
             float total = Convert.ToSingle(TXTTOTALVENTA.Text);
             float descuento = Convert.ToSingle(TXTDESCUENTOV.Text);
-           
+
 
             //int fkidventa = Convert.ToInt32(TXTIDVENTA.Text);
             int fkidproducto = Convert.ToInt32(CMBIDPRODUCTOVENTA.SelectedValue);
             int idventa = datos.agregarventa(fecha, fkidcliente, fkidempleado, fkidmetodo, credito, subtotal, descuento, isv, total);
 
-            
-            
-                // Si la venta es a crédito, actualizar el saldo del cliente
-                if (esCredito)
-                {
-                    datos.actualizarsaldo(fkidcliente, total);  // Actualizar el saldo
-                }
 
-                // Obtener el ID del producto y agregar el detalle de la venta
-                 fkidproducto = Convert.ToInt32(CMBIDPRODUCTOVENTA.SelectedValue);
+
+            // Si la venta es a crédito, actualizar el saldo del cliente
+            if (esCredito)
+            {
+                datos.actualizarsaldo(fkidcliente, total);  // Actualizar el saldo
+            }
+
+            // Obtener el ID del producto y agregar el detalle de la venta
+            fkidproducto = Convert.ToInt32(CMBIDPRODUCTOVENTA.SelectedValue);
 
             // Agregar detalle de venta
             datos.agregardetalleventa(idventa, fkidproducto, cantidad, subtotal, preciouni);
-            
+
 
             // Mostrar la venta en el DataGridView
-            datos.mostrarventa(DGVVENTA);
-
-               // MessageBox.Show("Venta y detalle de venta registrados correctamente.");
-            
-
-            /*if (esCredito)
-            {
-                query.actualizarsaldo(fkidcliente, total);
-            }
-
-            datos.agregarventa(fecha, fkidcliente, fkidempleado, fkidmetodo, credito, subtotal, descuento, isv, total);
-            datos.agregardetalleventa(idventa, fkidproducto, cantidad, subtotal, preciouni);
-            datos.mostrarventa(DGVVENTA);*/
+            datos.mostrarventa(DGVVENTAssssssssssssssssss);*/
 
 
-            
         }
 
         private void CANTIDAD_Click(object sender, EventArgs e)
@@ -231,6 +243,7 @@ namespace FERRETERIAPROYECTO
 
 
         }
+       
 
         private void cargarempleado()//funciones 
         {
@@ -291,20 +304,27 @@ namespace FERRETERIAPROYECTO
             }
         }
 
+        /*private void cargarventas()
+        {
+            DataTable dt = query.obtenerventas(); // query = instancia de tu clase QUERY
+            DGVVENTA.DataSource = dt;
+        }*/
+
+
         private void BTNELIMINARVENTA_Click(object sender, EventArgs e)
         {
             QUERY query = new QUERY();
 
-            DateTime fecha = Convert.ToDateTime(DGVVENTA.CurrentRow.Cells["fecha"].Value);
-            int id = Convert.ToInt32(DGVVENTA.CurrentRow.Cells["idventa"].Value);
-            int fkidcliente = Convert.ToInt32((DGVVENTA.CurrentRow.Cells["fkidcliente"].Value));
-            int fkidempleado = Convert.ToInt32((DGVVENTA.CurrentRow.Cells["fkidempleado"].Value));
-            int fkidmetodo = Convert.ToInt32((DGVVENTA.CurrentRow.Cells["fkidmetodo"].Value));
-            bool credito = Convert.ToBoolean(DGVVENTA.CurrentRow.Cells["escredito"].Value);
-            float subtotal = Convert.ToSingle((DGVVENTA.CurrentRow.Cells["subtotal"].Value));
-            float descuento = Convert.ToSingle((DGVVENTA.CurrentRow.Cells["descuento"].Value));
-            float isv = Convert.ToSingle((DGVVENTA.CurrentRow.Cells["isv"].Value));
-            float total = Convert.ToSingle((DGVVENTA.CurrentRow.Cells["total"].Value));
+            DateTime fecha = Convert.ToDateTime(DGVVENTAssssssssssssssssss.CurrentRow.Cells["fecha"].Value);
+            int id = Convert.ToInt32(DGVVENTAssssssssssssssssss.CurrentRow.Cells["idventa"].Value);
+            int fkidcliente = Convert.ToInt32((DGVVENTAssssssssssssssssss.CurrentRow.Cells["fkidcliente"].Value));
+            int fkidempleado = Convert.ToInt32((DGVVENTAssssssssssssssssss.CurrentRow.Cells["fkidempleado"].Value));
+            int fkidmetodo = Convert.ToInt32((DGVVENTAssssssssssssssssss.CurrentRow.Cells["fkidmetodo"].Value));
+            bool credito = Convert.ToBoolean(DGVVENTAssssssssssssssssss.CurrentRow.Cells["escredito"].Value);
+            float subtotal = Convert.ToSingle((DGVVENTAssssssssssssssssss.CurrentRow.Cells["subtotal"].Value));
+            float descuento = Convert.ToSingle((DGVVENTAssssssssssssssssss.CurrentRow.Cells["descuento"].Value));
+            float isv = Convert.ToSingle((DGVVENTAssssssssssssssssss.CurrentRow.Cells["isv"].Value));
+            float total = Convert.ToSingle((DGVVENTAssssssssssssssssss.CurrentRow.Cells["total"].Value));
 
             DialogResult result = MessageBox.Show("¿ESTA SEGURO DE ELIMNAR ESTE REGISTRO?", "CONFIRMAR ELIMINACION",
                MessageBoxButtons.YesNo,
@@ -316,7 +336,7 @@ namespace FERRETERIAPROYECTO
                 {
                     datos.eliminarventa(id, fecha, fkidcliente, fkidempleado, fkidmetodo, credito, subtotal, descuento, isv, total);
 
-                    datos.mostrarventa(DGVVENTA);
+                    datos.mostrarventa(DGVVENTAssssssssssssssssss);
                 }
                 else
                 {
@@ -331,11 +351,11 @@ namespace FERRETERIAPROYECTO
 
         private void DGVVENTA_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DTPVENTA.Text = DGVVENTA.CurrentRow.Cells[1].Value.ToString();
-            CMBIDCLIENTEV.Text = DGVVENTA.CurrentRow.Cells[2].Value.ToString();
-            CMBIDEMPLEADOV.Text = DGVVENTA.CurrentRow.Cells[3].Value.ToString();
-            CMBMETODO.Text = DGVVENTA.CurrentRow.Cells[4].Value.ToString();
-            int valor = Convert.ToInt32(DGVVENTA.CurrentRow.Cells[5].Value);
+            DTPVENTA.Text = DGVVENTAssssssssssssssssss.CurrentRow.Cells[1].Value.ToString();
+            CMBIDCLIENTEV.Text = DGVVENTAssssssssssssssssss.CurrentRow.Cells[2].Value.ToString();
+            CMBIDEMPLEADOV.Text = DGVVENTAssssssssssssssssss.CurrentRow.Cells[3].Value.ToString();
+            CMBMETODO.Text = DGVVENTAssssssssssssssssss.CurrentRow.Cells[4].Value.ToString();
+            int valor = Convert.ToInt32(DGVVENTAssssssssssssssssss.CurrentRow.Cells[5].Value);
 
             if (valor == 1)
             {
@@ -354,10 +374,12 @@ namespace FERRETERIAPROYECTO
                 RBNO0.Checked = false;
             }
 
-            TXTSUBTOTALV.Text = DGVVENTA.CurrentRow.Cells[6].Value.ToString();
-            TXTDESCUENTOV.Text = DGVVENTA.CurrentRow.Cells[7].Value.ToString();
-            TXTTOTALVENTA.Text = DGVVENTA.CurrentRow.Cells[8].Value.ToString();
-            TXTISVVENTA.Text = DGVVENTA.CurrentRow.Cells[9].Value.ToString();
+            TXTSUBTOTALV.Text = DGVVENTAssssssssssssssssss.CurrentRow.Cells[6].Value.ToString();
+            TXTDESCUENTOV.Text = DGVVENTAssssssssssssssssss.CurrentRow.Cells[7].Value.ToString();
+            TXTTOTALVENTA.Text = DGVVENTAssssssssssssssssss.CurrentRow.Cells[8].Value.ToString();
+            TXTISVVENTA.Text = DGVVENTAssssssssssssssssss.CurrentRow.Cells[9].Value.ToString();
+            
+            
         }
 
         public (float subtotal, float isv, float total) calcular(int cantidad, float preciounitario, float descuento)
@@ -394,6 +416,51 @@ namespace FERRETERIAPROYECTO
         private void TXTISVVENTA_TextChanged(object sender, EventArgs e)
         {
             actualizarvalores();
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btncerrar_Click(object sender, EventArgs e)
+        {
+            MENU frm = new MENU();
+            frm.Show();
+            this.Close();
+
+        }
+
+        private void label15_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BTNAGREAGARCLIENTEVEN_Click(object sender, EventArgs e)
+        {
+            CLIENTE frm = new CLIENTE();
+            frm.ShowDialog();
+
+        }
+
+        private void GBVENTA_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
+
+        }
+
+        private void CMBIDEMPLEADOV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
