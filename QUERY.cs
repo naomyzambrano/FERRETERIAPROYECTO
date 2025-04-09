@@ -711,18 +711,18 @@ namespace FERRETERIAPROYECTO
             return dt;
         }
 
-        public void agregaregreso(string descripcion, int monto, DateTime fecha, int fkidtipogasto)
+        public void agregaregreso(string descripcion, int monto, DateTime fecha, int tipogasto)
         {
             try
             {
 
                 cxn.Abrir();
-                string query = "insert into egresos (descripcion,monto,fecha,fkidtipogasto) VALUES(@descripcion,@monto,@fecha,@fkidtipogasto)";
+                string query = "insert into egresos (descripcion,monto,fecha,tipogasto) VALUES(@descripcion,@monto,@fecha,@tipogasto)";
                 SqlCommand cmd = new SqlCommand(query, cxn.cn);
                 cmd.Parameters.AddWithValue("@descripcion", descripcion);
                 cmd.Parameters.AddWithValue("@monto", monto);
                 cmd.Parameters.AddWithValue("@fecha", fecha);
-                cmd.Parameters.AddWithValue("@fkidtipogasto", fkidtipogasto);
+                cmd.Parameters.AddWithValue("@tipogasto", tipogasto);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("EGRESO REGISTRADO.");
             }

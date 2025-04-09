@@ -48,10 +48,10 @@ namespace FERRETERIAPROYECTO
 
             string descripcion = TXTDESCRIPCIONGASTO.Text;
             int monto = int.Parse(TXTMONTOGASTO.Text);
-            int fkidtipogasto = Convert.ToInt32(CMBTIPOGASTO.SelectedValue);
+            int tipogasto = Convert.ToInt32(CMBTIPOGASTO.SelectedValue);
 
             DateTime fecha = DTPGASTOS.Value;
-            datos.agregaregreso(descripcion, monto, fecha, fkidtipogasto);
+            datos.agregaregreso(descripcion, monto, fecha, tipogasto);
             datos.mostraregreso(DGVGASTO);
         }
 
@@ -63,7 +63,7 @@ namespace FERRETERIAPROYECTO
             string descripcion = DGVGASTO.CurrentRow.Cells["descripcion"].Value?.ToString();
             int monto = Convert.ToInt32((DGVGASTO.CurrentRow.Cells["monto"].Value));
             DateTime fecha = Convert.ToDateTime(DGVGASTO.CurrentRow.Cells["fecha"].Value);
-            int fkidtipogasto = Convert.ToInt32((DGVGASTO.CurrentRow.Cells["fkidtipogasto"].Value));
+            int tipogasto = Convert.ToInt32((DGVGASTO.CurrentRow.Cells["tipogasto"].Value));
 
             DialogResult result = MessageBox.Show("¿ESTA SEGURO DE ELIMNAR ESTE REGISTRO?", "CONFIRMAR ELIMINACION",
                MessageBoxButtons.YesNo,
@@ -73,7 +73,7 @@ namespace FERRETERIAPROYECTO
             {
                 if (!string.IsNullOrEmpty(descripcion))
                 {
-                    datos.eliminaregreso(id, descripcion, monto, fecha, fkidtipogasto);
+                    datos.eliminaregreso(id, descripcion, monto, fecha, tipogasto);
 
                     datos.mostraregreso(DGVGASTO);
                 }
@@ -99,17 +99,17 @@ namespace FERRETERIAPROYECTO
 
         private void BTNACTUALIZARGASTO_Click(object sender, EventArgs e)
         {
-            int id, monto, fkidtipogasto = 0;
+            int id, monto, tipogasto = 0;
             string descripcion;
             DateTime fecha;
 
             id = Convert.ToInt32(TXTIDEGRESOS.Text);
             descripcion = TXTDESCRIPCIONGASTO.Text;
             monto = Convert.ToInt32(TXTMONTOGASTO.Text);
-            fkidtipogasto = Convert.ToInt32(CMBTIPOGASTO.SelectedValue);
+            tipogasto = Convert.ToInt32(CMBTIPOGASTO.SelectedValue);
             fecha = DTPGASTOS.Value;
 
-            datos.actualizaregreso(id, descripcion, monto, fecha, fkidtipogasto);
+            datos.actualizaregreso(id, descripcion, monto, fecha, tipogasto);
             datos.mostraregreso(DGVGASTO);
         }
 

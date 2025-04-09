@@ -43,6 +43,8 @@
             this.mcontabilidad = new System.Windows.Forms.ToolStripMenuItem();
             this.mplanilla = new System.Windows.Forms.ToolStripMenuItem();
             this.megresos = new System.Windows.Forms.ToolStripMenuItem();
+            this.iNGRESOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vERVENTASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mcrearventanad = new System.Windows.Forms.ToolStripMenuItem();
             this.mempleados = new System.Windows.Forms.ToolStripMenuItem();
             this.mverempleado = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,6 +54,12 @@
             this.mentradaproducto = new System.Windows.Forms.ToolStripMenuItem();
             this.eDITARINVENTARIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mreporte = new System.Windows.Forms.ToolStripMenuItem();
+            this.rEPORTEEGRESOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rEPORTEVENTASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rEPORTEINVENTARIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rEPORTEDEPLANILLAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rEPORTECLIENTESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rEPORTEPRODUCTOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
@@ -74,8 +82,6 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.iNGRESOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vERVENTASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mvenuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -118,7 +124,7 @@
             this.mvenuStrip1.Location = new System.Drawing.Point(2, 60);
             this.mvenuStrip1.Name = "mvenuStrip1";
             this.mvenuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.mvenuStrip1.Size = new System.Drawing.Size(815, 116);
+            this.mvenuStrip1.Size = new System.Drawing.Size(915, 116);
             this.mvenuStrip1.TabIndex = 0;
             this.mvenuStrip1.Text = "menuStrip1";
             this.mvenuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.mvenuStrip1_ItemClicked);
@@ -235,6 +241,23 @@
             this.megresos.Text = "EGRESOS";
             this.megresos.Click += new System.EventHandler(this.megresos_Click);
             // 
+            // iNGRESOToolStripMenuItem
+            // 
+            this.iNGRESOToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.vERVENTASToolStripMenuItem});
+            this.iNGRESOToolStripMenuItem.Image = global::FERRETERIAPROYECTO.Properties.Resources._1486504339_chart_graph_pie_chart_revenue_growth_81319;
+            this.iNGRESOToolStripMenuItem.Name = "iNGRESOToolStripMenuItem";
+            this.iNGRESOToolStripMenuItem.Size = new System.Drawing.Size(143, 32);
+            this.iNGRESOToolStripMenuItem.Text = "INGRESO";
+            // 
+            // vERVENTASToolStripMenuItem
+            // 
+            this.vERVENTASToolStripMenuItem.Image = global::FERRETERIAPROYECTO.Properties.Resources.offer_discount_sales_add_cart_icon_228001;
+            this.vERVENTASToolStripMenuItem.Name = "vERVENTASToolStripMenuItem";
+            this.vERVENTASToolStripMenuItem.Size = new System.Drawing.Size(148, 32);
+            this.vERVENTASToolStripMenuItem.Text = "VER VENTAS";
+            this.vERVENTASToolStripMenuItem.Click += new System.EventHandler(this.vERVENTASToolStripMenuItem_Click);
+            // 
             // mcrearventanad
             // 
             this.mcrearventanad.BackColor = System.Drawing.Color.Bisque;
@@ -312,10 +335,60 @@
             // mreporte
             // 
             this.mreporte.BackColor = System.Drawing.Color.NavajoWhite;
+            this.mreporte.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.rEPORTEEGRESOSToolStripMenuItem,
+            this.rEPORTEVENTASToolStripMenuItem,
+            this.rEPORTEINVENTARIOToolStripMenuItem,
+            this.rEPORTEDEPLANILLAToolStripMenuItem,
+            this.rEPORTECLIENTESToolStripMenuItem,
+            this.rEPORTEPRODUCTOSToolStripMenuItem});
             this.mreporte.Image = global::FERRETERIAPROYECTO.Properties.Resources._1496969506_a_digital_survey_84686;
             this.mreporte.Name = "mreporte";
             this.mreporte.Size = new System.Drawing.Size(98, 112);
             this.mreporte.Text = "REPORTES";
+            // 
+            // rEPORTEEGRESOSToolStripMenuItem
+            // 
+            this.rEPORTEEGRESOSToolStripMenuItem.Image = global::FERRETERIAPROYECTO.Properties.Resources._1496969506_a_digital_survey_84686;
+            this.rEPORTEEGRESOSToolStripMenuItem.Name = "rEPORTEEGRESOSToolStripMenuItem";
+            this.rEPORTEEGRESOSToolStripMenuItem.Size = new System.Drawing.Size(204, 32);
+            this.rEPORTEEGRESOSToolStripMenuItem.Text = "REPORTE EGRESOS";
+            this.rEPORTEEGRESOSToolStripMenuItem.Click += new System.EventHandler(this.rEPORTEEGRESOSToolStripMenuItem_Click);
+            // 
+            // rEPORTEVENTASToolStripMenuItem
+            // 
+            this.rEPORTEVENTASToolStripMenuItem.Image = global::FERRETERIAPROYECTO.Properties.Resources._1496969506_a_digital_survey_84686;
+            this.rEPORTEVENTASToolStripMenuItem.Name = "rEPORTEVENTASToolStripMenuItem";
+            this.rEPORTEVENTASToolStripMenuItem.Size = new System.Drawing.Size(204, 32);
+            this.rEPORTEVENTASToolStripMenuItem.Text = "REPORTE VENTAS";
+            // 
+            // rEPORTEINVENTARIOToolStripMenuItem
+            // 
+            this.rEPORTEINVENTARIOToolStripMenuItem.Image = global::FERRETERIAPROYECTO.Properties.Resources._1496969506_a_digital_survey_84686;
+            this.rEPORTEINVENTARIOToolStripMenuItem.Name = "rEPORTEINVENTARIOToolStripMenuItem";
+            this.rEPORTEINVENTARIOToolStripMenuItem.Size = new System.Drawing.Size(204, 32);
+            this.rEPORTEINVENTARIOToolStripMenuItem.Text = "REPORTE INVENTARIO";
+            // 
+            // rEPORTEDEPLANILLAToolStripMenuItem
+            // 
+            this.rEPORTEDEPLANILLAToolStripMenuItem.Image = global::FERRETERIAPROYECTO.Properties.Resources._1496969506_a_digital_survey_84686;
+            this.rEPORTEDEPLANILLAToolStripMenuItem.Name = "rEPORTEDEPLANILLAToolStripMenuItem";
+            this.rEPORTEDEPLANILLAToolStripMenuItem.Size = new System.Drawing.Size(204, 32);
+            this.rEPORTEDEPLANILLAToolStripMenuItem.Text = "REPORTE DE PLANILLA";
+            // 
+            // rEPORTECLIENTESToolStripMenuItem
+            // 
+            this.rEPORTECLIENTESToolStripMenuItem.Image = global::FERRETERIAPROYECTO.Properties.Resources._1496969506_a_digital_survey_84686;
+            this.rEPORTECLIENTESToolStripMenuItem.Name = "rEPORTECLIENTESToolStripMenuItem";
+            this.rEPORTECLIENTESToolStripMenuItem.Size = new System.Drawing.Size(204, 32);
+            this.rEPORTECLIENTESToolStripMenuItem.Text = "REPORTE CLIENTES";
+            // 
+            // rEPORTEPRODUCTOSToolStripMenuItem
+            // 
+            this.rEPORTEPRODUCTOSToolStripMenuItem.Image = global::FERRETERIAPROYECTO.Properties.Resources._1496969506_a_digital_survey_84686;
+            this.rEPORTEPRODUCTOSToolStripMenuItem.Name = "rEPORTEPRODUCTOSToolStripMenuItem";
+            this.rEPORTEPRODUCTOSToolStripMenuItem.Size = new System.Drawing.Size(204, 32);
+            this.rEPORTEPRODUCTOSToolStripMenuItem.Text = "REPORTE PRODUCTOS";
             // 
             // toolStripMenuItem3
             // 
@@ -405,7 +478,7 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.BTNSALIR);
             this.panel1.Controls.Add(this.BTNLOGIN);
-            this.panel1.Location = new System.Drawing.Point(764, 20);
+            this.panel1.Location = new System.Drawing.Point(856, 16);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(53, 37);
             this.panel1.TabIndex = 1;
@@ -456,23 +529,6 @@
             this.pictureBox1.TabIndex = 23;
             this.pictureBox1.TabStop = false;
             // 
-            // iNGRESOToolStripMenuItem
-            // 
-            this.iNGRESOToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.vERVENTASToolStripMenuItem});
-            this.iNGRESOToolStripMenuItem.Image = global::FERRETERIAPROYECTO.Properties.Resources._1486504339_chart_graph_pie_chart_revenue_growth_81319;
-            this.iNGRESOToolStripMenuItem.Name = "iNGRESOToolStripMenuItem";
-            this.iNGRESOToolStripMenuItem.Size = new System.Drawing.Size(190, 32);
-            this.iNGRESOToolStripMenuItem.Text = "INGRESO";
-            // 
-            // vERVENTASToolStripMenuItem
-            // 
-            this.vERVENTASToolStripMenuItem.Image = global::FERRETERIAPROYECTO.Properties.Resources.offer_discount_sales_add_cart_icon_228001;
-            this.vERVENTASToolStripMenuItem.Name = "vERVENTASToolStripMenuItem";
-            this.vERVENTASToolStripMenuItem.Size = new System.Drawing.Size(190, 32);
-            this.vERVENTASToolStripMenuItem.Text = "VER VENTAS";
-            this.vERVENTASToolStripMenuItem.Click += new System.EventHandler(this.vERVENTASToolStripMenuItem_Click);
-            // 
             // MENU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -481,7 +537,7 @@
             this.BackColor = System.Drawing.Color.NavajoWhite;
             this.BackgroundImage = global::FERRETERIAPROYECTO.Properties.Resources._4137140_building_construction_industry_setting_1140751;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(822, 512);
+            this.ClientSize = new System.Drawing.Size(930, 512);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
@@ -554,5 +610,11 @@
         private System.Windows.Forms.ToolStripMenuItem iNGRESARPROVEEDORESToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem iNGRESOToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vERVENTASToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rEPORTEEGRESOSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rEPORTEVENTASToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rEPORTEINVENTARIOToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rEPORTEDEPLANILLAToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rEPORTECLIENTESToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rEPORTEPRODUCTOSToolStripMenuItem;
     }
 }

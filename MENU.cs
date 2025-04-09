@@ -250,5 +250,12 @@ namespace FERRETERIAPROYECTO
             frm.Show();
             this.Close();
         }
+
+        private void rEPORTEEGRESOSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            REPORTE_EGRESOS frm = new REPORTE_EGRESOS();
+            frm.Show();
+            this.Close();
+        }
     }
 }
