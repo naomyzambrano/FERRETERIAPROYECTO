@@ -75,6 +75,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.btnVOLVER = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.BTNELIMINARGASTO = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -97,6 +98,7 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.SandyBrown;
+            this.groupBox2.Controls.Add(this.BTNELIMINARGASTO);
             this.groupBox2.Controls.Add(this.BTNAGREGARVENTA);
             this.groupBox2.Controls.Add(this.CANTIDAD);
             this.groupBox2.Controls.Add(this.CMBIDPRODUCTOVENTA);
@@ -118,10 +120,10 @@
             // 
             this.BTNAGREGARVENTA.BackColor = System.Drawing.Color.Chocolate;
             this.BTNAGREGARVENTA.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BTNAGREGARVENTA.Location = new System.Drawing.Point(478, 40);
+            this.BTNAGREGARVENTA.Location = new System.Drawing.Point(478, 21);
             this.BTNAGREGARVENTA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BTNAGREGARVENTA.Name = "BTNAGREGARVENTA";
-            this.BTNAGREGARVENTA.Size = new System.Drawing.Size(115, 52);
+            this.BTNAGREGARVENTA.Size = new System.Drawing.Size(115, 37);
             this.BTNAGREGARVENTA.TabIndex = 43;
             this.BTNAGREGARVENTA.Text = "AGREGAR";
             this.BTNAGREGARVENTA.UseVisualStyleBackColor = false;
@@ -559,6 +561,20 @@
             this.btnVOLVER.UseVisualStyleBackColor = false;
             this.btnVOLVER.Click += new System.EventHandler(this.btnVOLVER_Click);
             // 
+            // BTNELIMINARGASTO
+            // 
+            this.BTNELIMINARGASTO.BackColor = System.Drawing.Color.Chocolate;
+            this.BTNELIMINARGASTO.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNELIMINARGASTO.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BTNELIMINARGASTO.Location = new System.Drawing.Point(478, 72);
+            this.BTNELIMINARGASTO.Margin = new System.Windows.Forms.Padding(2);
+            this.BTNELIMINARGASTO.Name = "BTNELIMINARGASTO";
+            this.BTNELIMINARGASTO.Size = new System.Drawing.Size(115, 37);
+            this.BTNELIMINARGASTO.TabIndex = 50;
+            this.BTNELIMINARGASTO.Text = "ELIMINAR";
+            this.BTNELIMINARGASTO.UseVisualStyleBackColor = false;
+            this.BTNELIMINARGASTO.Click += new System.EventHandler(this.BTNELIMINARGASTO_Click);
+            // 
             // CREAR_VENTA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -654,5 +670,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnVOLVER;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button BTNELIMINARGASTO;
     }
 }

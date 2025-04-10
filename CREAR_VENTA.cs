@@ -20,6 +20,8 @@ namespace FERRETERIAPROYECTO
         public string TipoUsuario { get; set; }
 
         List<DetalleVenta> listaProductos = new List<DetalleVenta>();
+
+
         public CREAR_VENTA()
         {
             
@@ -307,6 +309,7 @@ namespace FERRETERIAPROYECTO
         private void TXTPRECIOUDV_TextChanged(object sender, EventArgs e)
         {
 
+
         }
 
         private void CMBIDPRODUCTOVENTA_SelectedIndexChanged(object sender, EventArgs e)
@@ -358,6 +361,27 @@ namespace FERRETERIAPROYECTO
             MENU frm = new MENU();
             frm.Show();
             this.Close();
+        }
+
+        private void BTNELIMINARGASTO_Click(object sender, EventArgs e)
+        {
+            if (DGVVENTAtp.SelectedRows.Count > 0)
+            {
+                int index = DGVVENTAtp.SelectedRows[0].Index;
+
+                // Eliminar de la lista
+                listaProductos.RemoveAt(index);
+
+                // Reasignar la lista al DataSource para que se actualice visualmente
+                DGVVENTAtp.DataSource = null;
+                DGVVENTAtp.DataSource = listaProductos;
+
+                CalcularTotales(); // Recalcula los totales después de eliminar
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un producto para eliminar.");
+            }
         }
     }
 }
